@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ElWellHub — Better health. Better life.</title>
+<meta name="description" content="ElWellHub is your trusted personal distributor for OQATA Wellness Solutions products. Browse the full range and order directly on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#123D3A;
+    --blue:#1D716A;
+    --blue-light:#E1F1EC;
+    --orange:#E87856;
+    --orange-dark:#C85A3E;
+    --cream:#F6F8F1;
+    --ink:#17302D;
+    --muted:#5D706B;
+    --line:#D8E4DC;
+    --white:#FFFFFF;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{
+    font-family:'Sora',sans-serif;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+
+  /* NAV */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(246,248,241,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:700;font-size:20px;color:var(--navy);}
+  .brand img{width:38px;height:38px;border-radius:11px;object-fit:cover;box-shadow:0 5px 14px rgba(18,61,58,.16);}
+  .brand small{display:block;font-family:'Inter';font-weight:500;font-size:11px;color:var(--muted);letter-spacing:.02em;}
+  nav.links{display:flex;gap:28px;font-size:15px;font-weight:500;}
+  nav.links a{text-decoration:none;color:var(--navy);opacity:.75;transition:opacity .15s;}
+  nav.links a:hover{opacity:1;}
+  .nav-cta{
+    display:flex;align-items:center;gap:8px;
+    background:var(--orange);color:var(--white);
+    padding:10px 18px;border-radius:100px;
+    font-weight:600;font-size:14px;text-decoration:none;
+    white-space:nowrap;
+    transition:background .15s;
+  }
+  .nav-cta:hover{background:var(--orange-dark);}
+  .burger{display:none;background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(135deg,#061D3A 0%, #0B3F78 100%);
+    color:var(--white);
+    padding:72px 0 90px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    background:radial-gradient(circle,rgba(242,101,34,0.30) 0%,rgba(242,101,34,0) 70%);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;position:relative;z-index:2;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.18);
+    padding:7px 14px;border-radius:100px;
+    font-size:13px;font-weight:500;color:#CFE0F7;
+    margin-bottom:22px;
+  }
+  .eyebrow .pulse{width:7px;height:7px;border-radius:50%;background:#3CD87E;}
+  .hero h1{font-size:44px;line-height:1.12;font-weight:700;max-width:560px;}
+  .hero h1 span{color:#E85B2A;}
+  .hero p.lead{margin-top:20px;font-size:17px;color:#C6D5E8;max-width:480px;}
+  .hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .btn-primary{
+    background:var(--orange);color:var(--white);
+    padding:15px 26px;border-radius:100px;font-weight:600;font-size:15px;
+    text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+    transition:transform .15s, background .15s;
+    border:none;cursor:pointer;
+  }
+  .btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px);}
+  .btn-ghost{
+    padding:15px 26px;border-radius:100px;font-weight:600;font-size:15px;
+    text-decoration:none;color:var(--white);border:1px solid rgba(255,255,255,0.35);
+    transition:border-color .15s,background .15s;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.6);}
+  .hero-stats{display:flex;gap:30px;margin-top:44px;}
+  .hero-stats div p:first-child{font-family:'Sora';font-size:26px;font-weight:700;color:var(--white);}
+  .hero-stats div p:last-child{font-size:13px;color:#9FB4CD;margin-top:2px;}
+
+  .hero-card{
+    background:var(--white);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.4);
+    position:relative;z-index:2;
+  }
+  .hero-card img{border-radius:12px;width:100%;height:300px;object-fit:cover;background:#EFEAE1;}
+  .hero-card .tag{
+    position:absolute;top:38px;left:38px;
+    background:var(--orange);color:var(--white);
+    font-size:12px;font-weight:600;padding:6px 12px;border-radius:100px;
+  }
+  .hero-card .info{padding:16px 6px 4px;display:flex;justify-content:space-between;align-items:flex-end;}
+  .hero-card .info h4{font-size:16px;color:var(--navy);}
+  .hero-card .info p{font-size:13px;color:var(--muted);margin-top:4px;}
+  .hero-card .price{font-family:'Sora';font-weight:700;font-size:18px;color:var(--orange-dark);}
+
+  /* TRUST STRIP */
+  .trust{
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    padding:26px 0;
+  }
+  .trust .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;}
+  .trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--navy);}
+  .trust-item .badge{
+    width:34px;height:34px;border-radius:50%;background:var(--blue-light);
+    display:flex;align-items:center;justify-content:center;color:var(--blue);font-size:15px;font-weight:700;
+    flex-shrink:0;
+  }
+
+  /* SECTION HEADS */
+  section{padding:80px 0;}
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .kicker{color:var(--orange-dark);font-weight:600;font-size:14px;margin-bottom:10px;display:block;}
+  .section-head h2{font-size:32px;font-weight:700;color:var(--navy);}
+  .section-head p{margin-top:14px;font-size:16px;color:var(--muted);}
+
+  /* CATEGORY FILTERS */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
+  .filter-btn{
+    background:var(--white);border:1px solid var(--line);
+    padding:9px 18px;border-radius:100px;font-size:13.5px;font-weight:600;
+    color:var(--navy);cursor:pointer;transition:all .15s;
+  }
+  .filter-btn:hover{border-color:var(--blue);}
+  .filter-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+  /* PRODUCT GRID */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;}
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    transition:transform .18s, box-shadow .18s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 34px -18px rgba(11,37,69,0.28);}
+  .card .thumb{
+    position:relative;background:#F1ECE2;height:210px;
+  }
+  .card .thumb img{width:100%;height:100%;object-fit:cover;}
+  .card .cat-tag{
+    position:absolute;top:12px;left:12px;
+    background:rgba(11,37,69,0.85);color:var(--white);
+    font-size:11px;font-weight:600;padding:5px 10px;border-radius:100px;
+  }
+  .card .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;gap:10px;}
+  .card h3{font-size:16.5px;color:var(--navy);font-weight:700;}
+  .card .desc{font-size:13.5px;color:var(--muted);flex:1;}
+  .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+  .card .price{font-family:'Sora';font-weight:700;font-size:17px;color:var(--orange-dark);}
+  .card .price small{display:block;font-family:'Inter';font-weight:500;font-size:11px;color:var(--muted);}
+  .buy-btn{
+    background:var(--navy);color:var(--white);
+    border:none;padding:11px 16px;border-radius:100px;
+    font-weight:600;font-size:13.5px;cursor:pointer;
+    display:flex;align-items:center;gap:7px;
+    text-decoration:none;transition:background .15s;
+  }
+  .buy-btn:hover{background:var(--orange);}
+  .buy-btn svg{width:15px;height:15px;fill:currentColor;}
+
+  /* HOW IT WORKS */
+  .how{background:var(--blue-light);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .step{background:var(--white);border-radius:var(--radius);padding:28px 26px;border:1px solid var(--line);}
+  .step .num{
+    width:38px;height:38px;border-radius:10px;background:var(--navy);color:var(--white);
+    display:flex;align-items:center;justify-content:center;font-family:'Sora';font-weight:700;
+    margin-bottom:18px;
+  }
+  .step h3{font-size:17px;color:var(--navy);margin-bottom:8px;}
+  .step p{font-size:14px;color:var(--muted);}
+
+  /* WHY US */
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .why-list{display:flex;flex-direction:column;gap:22px;margin-top:26px;}
+  .why-item{display:flex;gap:14px;}
+  .why-item .ic{
+    width:42px;height:42px;border-radius:10px;background:var(--orange);color:var(--white);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'Sora';font-weight:700;
+  }
+  .why-item h4{font-size:15.5px;color:var(--navy);margin-bottom:4px;}
+  .why-item p{font-size:13.5px;color:var(--muted);}
+  .why-photo{
+    border-radius:20px;overflow:hidden;height:420px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;position:relative;
+  }
+  .why-photo img{width:100%;height:100%;object-fit:cover;opacity:0.9;}
+  .why-photo .cert-strip{
+    position:absolute;bottom:0;left:0;right:0;
+    background:rgba(11,37,69,0.88);color:var(--white);
+    padding:16px 20px;font-size:13px;font-weight:600;
+    display:flex;gap:16px;flex-wrap:wrap;
+  }
+
+  /* CONTACT BANNER */
+  .cta-band{
+    background:linear-gradient(120deg,var(--orange) 0%, var(--orange-dark) 100%);
+    color:var(--white);text-align:center;padding:70px 24px;border-radius:24px;
+    max-width:1180px;margin:0 auto 0;
+  }
+  .cta-band h2{font-size:30px;font-weight:700;max-width:600px;margin:0 auto;}
+  .cta-band p{margin-top:14px;font-size:16px;color:#FFE4D2;}
+  .cta-band .btn-primary{background:var(--white);color:var(--orange-dark);margin-top:26px;}
+  .cta-band .btn-primary:hover{background:#FFF0E6;}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:#B9C7DC;padding:56px 0 28px;margin-top:80px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,0.1);}
+  .foot-grid h5{color:var(--white);font-size:14px;margin-bottom:16px;font-family:'Sora';}
+  .foot-grid a{display:block;text-decoration:none;color:#B9C7DC;font-size:14px;margin-bottom:10px;transition:color .15s;}
+  .foot-grid a:hover{color:var(--orange);}
+  .foot-brand{display:flex;align-items:center;gap:8px;font-family:'Sora';font-weight:700;color:var(--white);font-size:19px;margin-bottom:12px;}
+  .foot-brand .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);}
+  .foot-brand img{width:30px;height:30px;border-radius:9px;object-fit:cover;}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:13px;color:#7E8FA8;flex-wrap:wrap;gap:12px;}
+  .disclaimer{font-size:12.5px;color:#6E80A0;line-height:1.7;max-width:900px;margin-top:16px;}
+
+  /* FLOATING WHATSAPP */
+  .float-wa{
+    position:fixed;bottom:24px;right:24px;z-index:200;
+    background:#25D366;color:var(--white);
+    width:60px;height:60px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,0.25);
+    text-decoration:none;
+    animation:pop .3s ease;
+  }
+  .float-wa svg{width:30px;height:30px;fill:currentColor;}
+  @keyframes pop{from{transform:scale(0);}to{transform:scale(1);}}
+
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-card{order:-1;}
+    .why{grid-template-columns:1fr;}
+    .why-photo{height:280px;order:-1;}
+    .steps{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    nav.links{display:none;}
+    .burger{display:block;}
+  }
+  @media(max-width:520px){
+    .hero h1{font-size:32px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .trust .wrap{justify-content:center;}
+    section{padding:56px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="nav">
+    <div class="brand">
+      <img src="logo/elwellhub.svg" alt="ElWellHub logo">
+      <div>ElWellHub<br><small>Better health. Better life.</small></div>
+    </div>
+    <nav class="links">
+      <a href="#top">Home</a>
+      <a href="#products">Products</a>
+      <a href="#how">How to order</a>
+      <a href="#why">Why us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="https://wa.me/250788877136?text=Hi%20ElWellHub%2C%20I%27d%20like%20to%20know%20more%20about%20your%20OQATA%20products." target="_blank" rel="noopener">
+      Order on WhatsApp
+    </a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="pulse"></span> Better health · Better life · Kigali-based wellness</span>
+      <h1>Better daily choices for lasting <span>energy and health.</span></h1>
+      <p class="lead">ElWellHub connects you to genuine OQATA Wellness Solutions products that support the habits behind better health, from focus and immunity to digestion, movement and daily vitality.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="#products">
+          Browse products
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn-ghost" href="https://wa.me/250788877136?text=Hi%20ElWellHub%2C%20I%20have%20a%20question%20about%20OQATA%20products." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+      <div class="hero-stats">
+        <div><p>15+</p><p>products in stock</p></div>
+        <div><p>100%</p><p>genuine, sealed items</p></div>
+        <div><p>&lt;24h</p><p>order confirmation</p></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="tag">Best seller</span>
+      <img src="https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg" alt="Super Focus Bacopa Gummies">
+      <div class="info">
+        <div>
+          <h4>Super Focus Gummies</h4>
+          <p>Memory, learning &amp; focus support</p>
+        </div>
+        <p class="price">45,000 RWF</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust-item"><span class="badge">FDA</span> FDA-registered facilities</div>
+    <div class="trust-item"><span class="badge">GMP</span> GMP certified</div>
+    <div class="trust-item"><span class="badge">NSF</span> NSF certified</div>
+    <div class="trust-item"><span class="badge">ISO</span> ISO 22000</div>
+    <div class="trust-item"><span class="badge">✓</span> Made with Earth's Creation USA</div>
+  </div>
+</div>
+
+<section id="products" class="wrap">
+  <div class="section-head">
+    <span class="kicker">The full OQATA range</span>
+    <h2>Pick your product, message me, get it delivered.</h2>
+    <p>Every item below is genuine OQATA stock. Tap "Buy on WhatsApp" on any card and I'll confirm price, availability and delivery in Kigali and beyond.</p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="product-grid"></div>
+</section>
+
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Simple, no account needed</span>
+      <h2>Ordering takes three steps.</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Choose your product</h3>
+        <p>Browse the catalogue above and pick what fits your goal — focus, detox, immunity, weight or joint support.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Tap "Buy on WhatsApp"</h3>
+        <p>A message opens automatically with the product name filled in — just hit send, no forms to fill.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Confirm and receive</h3>
+        <p>I'll confirm price, quantity and delivery details with you directly, then arrange drop-off or pickup.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="wrap">
+  <div class="why">
+    <div>
+      <span class="kicker">Why buy through ElWellHub</span>
+      <h2 style="font-size:30px;color:var(--navy);font-weight:700;">Your direct line to genuine OQATA stock.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="ic">✓</div>
+          <div><h4>Verified, sealed products</h4><p>Every item comes straight from OQATA Wellness Solutions stock — no repackaging, no guesswork.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ic">⚡</div>
+          <div><h4>Fast, personal service</h4><p>Message me directly on WhatsApp — no call centers, no waiting on hold.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ic">📍</div>
+          <div><h4>Local delivery</h4><p>Based in Kigali with delivery options across Rwanda and the wider East African region.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ic">💬</div>
+          <div><h4>Honest guidance</h4><p>Not sure what suits you? Tell me your health goal and I'll recommend the right product.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="why-photo">
+      <img src="https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg" alt="OQATA Liver Care product line">
+      <div class="cert-strip">FDA · GMP · NSF · ISO 22000 · HACCP · Halal &amp; Kosher</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="wrap">
+  <div class="cta-band">
+    <h2>Have a question, or ready to order?</h2>
+    <p>Send me a message on WhatsApp — +250 788 877 136 — and I'll get back to you the same day.</p>
+    <a class="btn-primary" href="https://wa.me/250788877136?text=Hi%20ElWellHub%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+      Message +250 788 877 136
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo/elwellhub.svg" alt="ElWellHub logo">ElWellHub</div>
+        <p style="font-size:13.5px;color:#9FB4CD;max-width:280px;">An independent OQATA Wellness Solutions distributor storefront, based in Kigali, Rwanda.</p>
+      </div>
+      <div>
+        <h5>Shop</h5>
+        <a href="#products">All products</a>
+        <a href="#how">How to order</a>
+        <a href="#why">Why ElWellHub</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="https://oqatawellness.com/" target="_blank" rel="noopener">OQATA Wellness Solutions</a>
+        <a href="https://oqatawellness.com/about/" target="_blank" rel="noopener">About OQATA</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="https://wa.me/250788877136" target="_blank" rel="noopener">WhatsApp +250 788 877 136</a>
+        <a href="#contact">Kigali, Rwanda</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ElWellHub. Independent OQATA distributor.</span>
+      <span>Products manufactured with Earth's Creation USA.</span>
+    </div>
+    <p class="disclaimer">ElWellHub is an independent product storefront and is not the official corporate website of OQATA Wellness Solutions. Statements about these products have not been evaluated and the products are not intended to diagnose, treat, cure, or prevent any disease. Consult a healthcare professional before starting any new supplement.</p>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/250788877136?text=Hi%20ElWellHub%2C%20I%27d%20like%20to%20order%20a%20product." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Zm-5.55 13.3h-.01a7.5 7.5 0 0 1-3.83-1.05l-.27-.16-2.75.81.82-2.68-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.35-7.44 7.47-7.44 2 0 3.87.78 5.28 2.19a7.38 7.38 0 0 1 2.18 5.26c0 4.1-3.35 7.44-7.47 7.44Zm4.09-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11a6.69 6.69 0 0 1-1.24-1.55c-.13-.22 0-.33.1-.44.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.07-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.62 2.47 3.92 3.47.55.24.98.38 1.31.48.55.17 1.06.15 1.45.09.44-.07 1.32-.54 1.51-1.06.19-.51.19-.95.13-1.05-.06-.1-.2-.15-.42-.26Z"/></svg>
+</a>
+
+<script>
+const products = [
+  {name:"Super Focus Gummies", cat:"Brain & Focus", desc:"Bacopa Monnieri, Panax Ginseng and Rhodiola Rosea for memory, learning and daily focus.", price:"45,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
+  {name:"Resveratrol", cat:"Immunity & Energy", desc:"Supports mental energy, reduces brain fog and strengthens immune resilience.", price:"48,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
+  {name:"Liver Care", cat:"Detox & Digestive", desc:"Formulated for liver detox, reduced fat buildup and better digestive balance.", price:"42,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
+  {name:"Super Omega-3", cat:"Heart & Immunity", desc:"Cardiovascular, joint mobility, immunity and cognitive support in one formula.", price:"46,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
+  {name:"Colon Detox", cat:"Detox & Digestive", desc:"A gentle cleansing blend that supports gut health and regular digestion.", price:"40,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
+  {name:"Hair, Skin + Nails", cat:"Beauty", desc:"Nourishing blend to support stronger hair, clearer skin and healthier nails.", price:"39,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
+  {name:"Andro-T", cat:"Men's Health", desc:"A men's vitality formula designed to support energy, drive and hormone balance.", price:"52,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
+  {name:"Andro-Brew", cat:"Men's Health", desc:"A brewed wellness blend built alongside Andro-T for daily men's vitality support.", price:"38,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
+  {name:"Trimtone Enhancer", cat:"Weight Management", desc:"Supports metabolism and healthy weight management as part of a balanced routine.", price:"44,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
+  {name:"Trimtone Tea", cat:"Weight Management", desc:"A daily herbal tea companion to the Trimtone weight-management line.", price:"28,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
+  {name:"Muscle-Bone Care", cat:"Joint & Bone", desc:"Supports strong bones, muscle recovery and everyday mobility.", price:"43,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
+  {name:"Joint Flex", cat:"Joint & Bone", desc:"Total joint support formula for comfort and flexibility in daily movement.", price:"45,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/JOINTFLEX-1024x1024.jpg"},
+  {name:"ImmuniKids Gummies", cat:"Kids", desc:"A kid-friendly gummy formulated to support children's everyday immunity.", price:"32,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0927-819x1024.jpg"},
+  {name:"Femmi-Brew Wellness Tea", cat:"Women's Health", desc:"A herbal wellness tea blended to support women's hormonal balance and comfort.", price:"29,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/FEMI-BREW-992x1024.jpg"},
+  {name:"Total Vitality Blend", cat:"Wellness Blend", desc:"An all-in-one daily blend covering energy, immunity and general vitality.", price:"50,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TOTAL-VITALITY-BLEND-1024x1024.jpg"}
+];
+
+const grid = document.getElementById('product-grid');
+const filterBar = document.getElementById('filters');
+const categories = ["All", ...new Set(products.map(p=>p.cat))];
+
+function waLink(name){
+  const msg = `Hi ElWellHub, I'd like to order the ${name}. Is it in stock?`;
+  return `https://wa.me/250788877136?text=${encodeURIComponent(msg)}`;
+}
+
+function renderGrid(filter){
+  grid.innerHTML = "";
+  products
+    .filter(p => filter === "All" || p.cat === filter)
+    .forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="thumb">
+          <span class="cat-tag">${p.cat}</span>
+          <img src="${p.img}" alt="${p.name}" loading="lazy">
+        </div>
+        <div class="body">
+          <h3>${p.name}</h3>
+          <p class="desc">${p.desc}</p>
+          <div class="row">
+            <div class="price">${p.price}<small>per pack</small></div>
+            <a class="buy-btn" href="${waLink(p.name)}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Z"/></svg>
+              Buy on WhatsApp
+            </a>
+          </div>
+        </div>`;
+      grid.appendChild(card);
+    });
+}
+
+categories.forEach(cat => {
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn' + (cat === 'All' ? ' active' : '');
+  btn.textContent = cat;
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGrid(cat);
+  });
+  filterBar.appendChild(btn);
+});
+
+renderGrid("All");
+</script>
+
+</body>
+</html>
