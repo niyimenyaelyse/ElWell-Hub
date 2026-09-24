@@ -188,6 +188,10 @@
   .card .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;gap:10px;}
   .card h3{font-size:16.5px;color:var(--navy);font-weight:700;}
   .card .desc{font-size:13.5px;color:var(--muted);flex:1;}
+  .card .more-info{display:none;font-size:13px;color:var(--muted);line-height:1.55;padding:10px 0 2px;border-top:1px solid var(--line);}
+  .card .more-info.open{display:block;}
+  .card .details-btn{align-self:flex-start;border:0;background:none;padding:0;color:var(--blue);font:600 13px 'Inter',sans-serif;cursor:pointer;}
+  .card .details-btn:hover{text-decoration:underline;}
   .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
   .card .price{font-family:'Sora';font-weight:700;font-size:17px;color:var(--orange-dark);}
   .card .price small{display:block;font-family:'Inter';font-weight:500;font-size:11px;color:var(--muted);}
@@ -508,6 +512,69 @@ const productsByLang = {
   ]
 };
 
+const productDetails = {
+  "Super Focus Gummies": {
+    en: "Contains herbs commonly used for memory, attention, and mental stamina. Some people use focus supplements when they feel mentally tired or distracted; effects vary and they are not a treatment for memory disorders.",
+    rw: "Harimo ibyatsi bikunze gukoreshwa mu gufasha kwibuka, kwibanda no kugira imbaraga mu bitekerezo. Bamwe babikoresha iyo bumva bananiwe mu mutwe; ingaruka zirahinduka kandi ntabwo bivura indwara zo kwibuka."
+  },
+  "Resveratrol": {
+    en: "Resveratrol is an antioxidant compound studied for cellular protection and healthy aging. It may support normal inflammation and circulation, but it should not replace prescribed care or a balanced diet.",
+    rw: "Resveratrol ni ikinyabutabire kirinda uturemangingo kandi kigakorerwa ubushakashatsi ku gusaza neza. Gishobora gufasha umubiri, ariko ntigisimbura imiti cyangwa indyo yuzuye."
+  },
+  "Liver Care": {
+    en: "Ingredients are traditionally used to support normal liver function and digestion. It does not detox the body from alcohol, medicines, or poisoning; seek medical help for yellow eyes, severe pain, or persistent nausea.",
+    rw: "Ibiyigize bikunze gukoreshwa mu gufasha imikorere isanzwe y'umwijima no gusya. Ntabwo ikuramo uburozi, inzoga cyangwa imiti mu mubiri; saba ubufasha bw'umuganga iyo amaso abaye umuhondo cyangwa ufite ububabare bukomeye."
+  },
+  "Super Omega-3": {
+    en: "Omega-3 fats help support normal heart, brain, and eye function. They may be useful when dietary fish intake is low; ask a clinician before use if you take blood thinners.",
+    rw: "Amavuta ya Omega-3 afasha umutima, ubwonko n'amaso gukora neza. Ashobora gufasha abataronka amafi ahagije; baza umuganga niba ukoresha imiti igabanya amaraso."
+  },
+  "Colon Detox": {
+    en: "Fiber and cleansing herbs may support regular bowel movements and temporary bloating or sluggish digestion. Drink enough water, and stop use for severe cramps, bleeding, or ongoing constipation.",
+    rw: "Utwunyangingo n'ibyatsi bishobora gufasha amara gukora neza no kugabanya kubyimba by'igihe gito. Nywa amazi ahagije, kandi uhagarike niba ufite ibinya bikomeye, amaraso cyangwa impatwe idakira."
+  },
+  "Hair, Skin + Nails": {
+    en: "Nutrients such as biotin and minerals support normal keratin formation for hair, skin, and nails. Changes take time, and sudden hair loss or skin changes deserve professional evaluation.",
+    rw: "Intungamubiri nka biotin n'imyunyu ngugu zifasha umubiri gukora keratin y'umusatsi, uruhu n'inzara. Impinduka zisaba igihe; umusatsi ugwa gitunguranye cyangwa uruhu ruhinduka bisaba umuganga."
+  },
+  "Andro-T": {
+    en: "Marketed for male vitality and stamina, but supplements cannot diagnose or correct low testosterone. Discuss persistent fatigue, low libido, or erection changes with a qualified clinician.",
+    rw: "Yagenewe gufasha imbaraga n'ubuzima bw'abagabo, ariko ntabwo isuzuma cyangwa ikosora testosterone nkeya. Ganira n'umuganga ku munaniro udashira, ubushake buke cyangwa impinduka mu myanya ndangagitsina."
+  },
+  "Andro-Brew Cappuccino for Men": {
+    en: "An herbal coffee-style drink intended to support daily energy and endurance. Check the caffeine content and avoid excess use if you are sensitive to caffeine, pregnant, or have uncontrolled blood pressure.",
+    rw: "Ni ikinyobwa cy'ibyatsi gisa n'ikawa kigenewe gufasha imbaraga za buri munsi. Reba caffeine irimo kandi wirinde kuyinywa cyane niba ikugiraho ingaruka cyangwa ufite umuvuduko w'amaraso utagenzurwa."
+  },
+  "Trimtone Enhancer": {
+    en: "Weight-support ingredients may complement a calorie-aware diet and regular movement. It cannot replace nutrition or treat obesity; stop if you notice palpitations, dizziness, or unusual anxiety.",
+    rw: "Ibiyigize bishobora gufasha gahunda yo kugenzura ibiro hamwe n'indyo iboneye no gukora siporo. Ntabwo isimbura indyo cyangwa kuvura umubyibuho; uhagarike niba umutima utera cyane, uzungera cyangwa ugira ubwoba budasanzwe."
+  },
+  "Trimtone Tea": {
+    en: "A herbal tea for hydration and a daily healthy routine. Some cleansing herbs can loosen stools or interact with medicines, so use only as directed and do not rely on it for rapid weight loss.",
+    rw: "Ni icyayi cy'ibyatsi gifasha kunywa amazi no kugira gahunda nziza ya buri munsi. Ibyatsi bimwe bishobora gutera impiswi cyangwa gukorana nabi n'imiti; koresha uko byateganyijwe kandi ntukiringire kugabanya ibiro vuba."
+  },
+  "Muscle-Bone Care": {
+    en: "Minerals and supportive nutrients help maintain normal bones and muscle function. It may complement strength exercise and a balanced diet; new severe bone or muscle pain needs medical advice.",
+    rw: "Imyunyu ngugu n'intungamubiri bifasha amagufa n'imitsi gukora neza. Bishobora kujyana na siporo n'indyo yuzuye; ububabare bukomeye bushya mu magufa cyangwa imitsi busaba umuganga."
+  },
+  "Joint Flex": {
+    en: "Joint-support nutrients may help maintain flexibility and everyday comfort. Results differ, and swelling, redness, warmth, or sudden joint pain should be assessed by a clinician.",
+    rw: "Intungamubiri z'ingingo zishobora gufasha kugumana ubworohere n'uko ingingo zikora buri munsi. Iyo ingingo ibyimbye, itukura, ishyushye cyangwa ibabaza gitunguranye, saba umuganga."
+  },
+  "ImmuniKids Gummies": {
+    en: "Provides child-friendly nutrients intended to support normal immune function. Follow the age and serving directions, keep away from young children, and ask a pediatric professional before use.",
+    rw: "Itanga intungamubiri z'abana zigenewe gufasha ubudahangarwa busanzwe. Kurikiza imyaka n'ingano byateganyijwe, uzibike kure y'abana bato, kandi ubaze umuganga w'abana mbere yo kuyikoresha."
+  },
+  "Feminine Brew": {
+    en: "Herbal ingredients are traditionally used for daily comfort and menstrual wellness. It is not a treatment for abnormal bleeding, severe cramps, pregnancy concerns, or hormonal disorders.",
+    rw: "Ibiyigize by'ibyatsi bikunze gukoreshwa mu gufasha ihumure n'ubuzima bw'imihango. Ntabwo bivura kuva amaraso bidasanzwe, ibinya bikomeye, inda cyangwa indwara z'imisemburo."
+  },
+  "Total Vitality Blend": {
+    en: "A broad daily blend intended to complement energy, immune support, and general nutrition. Check the full ingredient list to avoid doubling nutrients with other supplements or medicines.",
+    rw: "Ni uruvange rwa buri munsi rugenewe gufasha imbaraga, ubudahangarwa n'intungamubiri muri rusange. Reba ibiyigize byose wirinde gusubiramo intungamubiri n'indi miti cyangwa ibindi byiyongera."
+  }
+};
+
 const translations = {
   en: {
     nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', contact:'Contact', cta:'Order on WhatsApp' },
@@ -563,6 +630,8 @@ const translations = {
     },
     all:'All',
     buy:'Order via WhatsApp',
+    seeMore:'See more',
+    seeLess:'See less',
     waPrefix:'Hello ElWellHub, I would like to order '
   },
   rw: {
@@ -619,6 +688,8 @@ const translations = {
     },
     all:'Byose',
     buy:'Tegura kuri WhatsApp',
+    seeMore:'Reba ibisobanuro',
+    seeLess:'Hisha ibisobanuro',
     waPrefix:'Mwaramutse ElWellHub, ndashaka gutumiza '
   }
 };
@@ -731,6 +802,8 @@ function renderGrid(filter, lang = state.lang){
       <div class="body">
         <h3>${p.name}</h3>
         <p class="desc">${p.desc}</p>
+        <button class="details-btn" type="button" aria-expanded="false">${translations[lang].seeMore}</button>
+        <p class="more-info">${productDetails[p.name][lang]}</p>
         <div class="row">
           <a class="buy-btn" href="${waLink(p.name, lang)}" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Z"/></svg>
@@ -738,6 +811,13 @@ function renderGrid(filter, lang = state.lang){
           </a>
         </div>
       </div>`;
+    const detailsButton = card.querySelector('.details-btn');
+    const details = card.querySelector('.more-info');
+    detailsButton.addEventListener('click', () => {
+      const isOpen = details.classList.toggle('open');
+      detailsButton.setAttribute('aria-expanded', String(isOpen));
+      detailsButton.textContent = isOpen ? translations[lang].seeLess : translations[lang].seeMore;
+    });
     grid.appendChild(card);
   });
 }
