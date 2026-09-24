@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="rw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ElWellHub — Ubuzima bwiza. Ubuzima burambye.</title>
-<meta name="description" content="ElWellHub iguhuza n'ibicuruzwa by'umwimerere bya OQATA Wellness Solutions, bikakugeraho ku buntu aho ari ho hose mu Rwanda, hamwe n'inama zihariye ku buzima.">
+<title>ElWellHub — Better health. Better life.</title>
+<meta name="description" content="ElWellHub connects you with authentic OQATA Wellness Solutions products, free delivery anywhere in Rwanda, and personal wellness guidance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -64,6 +64,9 @@
     transition:background .15s;
   }
   .nav-cta:hover{background:var(--orange-dark);}
+  .language-switcher{display:flex;align-items:center;gap:4px;background:var(--white);border:1px solid var(--line);border-radius:100px;padding:4px;font-size:12px;font-weight:700;}
+  .language-switcher button{border:0;background:transparent;color:var(--muted);padding:6px 8px;border-radius:100px;cursor:pointer;font:inherit;}
+  .language-switcher button.active{background:var(--navy);color:var(--white);}
   .burger{display:none;background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer;}
 
   /* HERO */
@@ -128,7 +131,6 @@
   .hero-card .info{padding:16px 6px 4px;display:flex;justify-content:space-between;align-items:flex-end;}
   .hero-card .info h4{font-size:16px;color:var(--navy);}
   .hero-card .info p{font-size:13px;color:var(--muted);margin-top:4px;}
-  .hero-card .price{font-family:'Sora';font-weight:700;font-size:18px;color:var(--orange-dark);}
 
   /* TRUST STRIP */
   .trust{
@@ -291,17 +293,21 @@
   <div class="nav">
     <div class="brand">
       <img src="logo/elwellhub.svg" alt="ElWellHub logo">
-      <div>ElWellHub<br><small>Ubuzima bwiza. Ubuzima burambye.</small></div>
+      <div>ElWellHub<br><small>Better health. Better life.</small></div>
     </div>
     <nav class="links">
-      <a href="#top">Ahabanza</a>
-      <a href="#products">Ibicuruzwa</a>
-      <a href="#how">Uko watumiza</a>
-      <a href="#why">Kuki twe</a>
-      <a href="#contact">Twandikire</a>
+      <a id="nav-home" href="#top">Home</a>
+      <a id="nav-products" href="#products">Products</a>
+      <a id="nav-how" href="#how">How to order</a>
+      <a id="nav-why" href="#why">Why us</a>
+      <a id="nav-contact" href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/250788877136?text=Mwaramutse%20ElWellHub%2C%20ndashaka%20kumenya%20byinshi%20ku%20bicuruzwa%20bya%20OQATA." target="_blank" rel="noopener">
-      Tumiza kuri WhatsApp
+    <div class="language-switcher" aria-label="Language switcher">
+      <button type="button" class="active" data-lang="en">EN</button>
+      <button type="button" data-lang="rw">RW</button>
+    </div>
+    <a id="nav-cta" class="nav-cta" href="https://wa.me/250788877136?text=Hello%20ElWellHub%2C%20I%27d%20like%20to%20learn%20more%20about%20OQATA%20products." target="_blank" rel="noopener">
+      Order on WhatsApp
     </a>
   </div>
 </header>
@@ -309,31 +315,30 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow"><span class="pulse"></span> Ubuzima bwiza · Ubuzima burambye · Serivisi ikorera i Kigali</span>
-      <h1>Hitamo ibyiza buri munsi ugire <span>imbaraga n'ubuzima bwiza.</span></h1>
-      <p class="lead">ElWellHub iguhuza n'ibicuruzwa by'umwimerere bya OQATA Wellness Solutions, bikakugeraho ku buntu aho ari ho hose mu Rwanda, hamwe n'umujyanama w'inzobere wagufasha guhitamo neza.</p>
+      <span id="hero-eyebrow" class="eyebrow"><span class="pulse"></span> Better health · Better life · Kigali-based service</span>
+      <h1 id="hero-title">Choose better every day for <span>more energy and wellness.</span></h1>
+      <p id="hero-lead" class="lead">ElWellHub connects you with authentic OQATA Wellness Solutions products, free delivery anywhere in Rwanda, and personal guidance to help you choose well.</p>
       <div class="hero-btns">
-        <a class="btn-primary" href="#products">
-          Reba ibicuruzwa
+        <a id="hero-browse" class="btn-primary" href="#products">
+          Browse products
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a class="btn-ghost" href="https://wa.me/250788877136?text=Mwaramutse%20ElWellHub%2C%20ndashaka%20kuvugana%20n%27umujyanama%20w%27inzobere%20mbere%20yo%20guhitamo%20igicuruzwa." target="_blank" rel="noopener">Vugana n'umujyanama</a>
+        <a id="hero-advisor" class="btn-ghost" href="https://wa.me/250788877136?text=Hello%20ElWellHub%2C%20I%27d%20like%20to%20speak%20with%20a%20wellness%20advisor%20before%20choosing%20a%20product." target="_blank" rel="noopener">Talk to an advisor</a>
       </div>
       <div class="hero-stats">
-        <div><p>15+</p><p>ibicuruzwa bihari</p></div>
-        <div><p>100%</p><p>by'umwimerere kandi bifunze</p></div>
-        <div><p>&lt;24h</p><p>kwemeza itumizwa</p></div>
+        <div><p>15+</p><p id="hero-stat-1">products available</p></div>
+        <div><p>100%</p><p id="hero-stat-2">authentic and sealed</p></div>
+        <div><p>&lt;24h</p><p id="hero-stat-3">order confirmation</p></div>
       </div>
     </div>
     <div class="hero-card">
-      <span class="tag">Icyamamare cyane</span>
+      <span class="tag">Most popular</span>
       <img src="https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg" alt="Super Focus Bacopa Gummies">
       <div class="info">
         <div>
           <h4>Super Focus Gummies</h4>
-          <p>Gufasha kwibuka, kwiga no kwibanda</p>
+          <p>Supports memory, learning and focus</p>
         </div>
-        <p class="price">45,000 RWF</p>
       </div>
     </div>
   </div>
@@ -341,20 +346,19 @@
 
 <div class="trust">
   <div class="wrap">
-    <div class="trust-item"><span class="badge">FDA</span> Inganda zemewe na FDA</div>
-    <div class="trust-item"><span class="badge">GMP</span> Byemejwe na GMP</div>
-    <div class="trust-item"><span class="badge">NSF</span> Byemejwe na NSF</div>
-    <div class="trust-item"><span class="badge">ISO</span> ISO 22000</div>
-    <div class="trust-item"><span class="badge">✓</span> Gutanga ku buntu mu Rwanda hose</div>
-    <div class="trust-item"><span class="badge">✦</span> Umujyanama w'inzobere ku buzima</div>
+    <div class="trust-item"><span class="badge">FDA</span> <span id="trust-1">FDA-approved facilities</span></div>
+    <div class="trust-item"><span class="badge">GMP</span> <span id="trust-2">GMP certified</span></div>
+    <div class="trust-item"><span class="badge">NSF</span> <span id="trust-3">NSF certified</span></div>
+    <div class="trust-item"><span class="badge">ISO</span> <span id="trust-4">ISO 22000</span></div>
+    <div class="trust-item"><span class="badge">✓</span> <span id="trust-5">Free delivery across Rwanda</span></div>
+    <div class="trust-item"><span class="badge">✦</span> <span id="trust-6">Personal wellness advisor</span></div>
   </div>
 </div>
 
 <section id="products" class="wrap">
   <div class="section-head">
-    <span class="kicker">Ibicuruzwa byose bya OQATA</span>
-    <h2>Hitamo igicuruzwa, twandikire, tukikuzanire.</h2>
-    <p>Ibicuruzwa byose biri hano ni iby'umwimerere bya OQATA. Kanda kuri "Tumiza kuri WhatsApp" maze twemeze ko gihari, dutegure ko ukigezwaho ku buntu aho ari ho hose mu Rwanda, cyangwa tubanze tuguhuza n'umujyanama wacu w'inzobere.</p>
+    <h2 id="products-title">Choose a product, message us, and we will deliver it.</h2>
+    <p id="products-subtitle">Every product listed here is authentic OQATA. Click "Order on WhatsApp" to confirm availability and arrange free delivery anywhere in Rwanda, or speak with our wellness advisor first.</p>
   </div>
 
   <div class="filters" id="filters"></div>
@@ -364,24 +368,24 @@
 <section id="how" class="how">
   <div class="wrap">
     <div class="section-head">
-      <span class="kicker">Biroroshye, nta konti ikenewe</span>
-      <h2>Gutumiza bikorwa mu ntambwe eshatu.</h2>
+      <span id="how-kicker" class="kicker">Simple, no account required</span>
+      <h2 id="how-title">Order in three easy steps.</h2>
     </div>
     <div class="steps">
       <div class="step">
         <div class="num">1</div>
-        <h3>Hitamo igicuruzwa</h3>
-        <p>Reba urutonde rw'ibicuruzwa hejuru, cyangwa ubaze umujyanama wacu w'inzobere icyagufasha kugera ku ntego yawe y'ubuzima.</p>
+        <h3 id="step-1-title">Choose a product</h3>
+        <p id="step-1-text">Browse the products above, or ask our wellness advisor which option best supports your goals.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
-        <h3>Kanda kuri "Tumiza kuri WhatsApp"</h3>
-        <p>Ubutumwa burafunguka bwikoreye izina ry'igicuruzwa. Kanda gusa kuri kohereza, nta mafishi yo kuzuza.</p>
+        <h3 id="step-2-title">Click "Order on WhatsApp"</h3>
+        <p id="step-2-text">A message opens with the product name already included. Just send it; no forms are required.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
-        <h3>Emeza kandi wakire</h3>
-        <p>Turemeza itumizwa ryawe, tukaguha ubufasha igihe bikenewe, tunategure ko ukigezwaho ku buntu aho ari ho hose mu Rwanda.</p>
+        <h3 id="step-3-title">Confirm and receive</h3>
+        <p id="step-3-text">We confirm your order, answer any questions, and arrange free delivery anywhere in Rwanda.</p>
       </div>
     </div>
   </div>
@@ -390,24 +394,24 @@
 <section id="why" class="wrap">
   <div class="why">
     <div>
-      <span class="kicker">Kuki watumiza kuri ElWellHub</span>
-      <h2 style="font-size:30px;color:var(--navy);font-weight:700;">Uburyo bwizewe bwo kubona ibicuruzwa by'umwimerere bya OQATA.</h2>
+      <span id="why-kicker" class="kicker">Why order from ElWellHub</span>
+      <h2 id="why-title" style="font-size:30px;color:var(--navy);font-weight:700;">A trusted way to get authentic OQATA products.</h2>
       <div class="why-list">
         <div class="why-item">
           <div class="ic">✓</div>
-          <div><h4>Ibicuruzwa byagenzuwe kandi bifunze</h4><p>Buri gicuruzwa kiva mu bubiko bwa OQATA Wellness Solutions. Nta kongera kubipfunyika, nta gushidikanya.</p></div>
+          <div><h4 id="why-1-title">Verified and sealed products</h4><p id="why-1-text">Every product comes from OQATA Wellness Solutions inventory. No repackaging and no guesswork.</p></div>
         </div>
         <div class="why-item">
           <div class="ic">⚡</div>
-          <div><h4>Serivisi yihuse kandi yihariye</h4><p>Twandikire kuri WhatsApp mu buryo butaziguye. Nta bigo by'amatelefone, nta gutegereza ku murongo.</p></div>
+          <div><h4 id="why-2-title">Fast, personal service</h4><p id="why-2-text">Message us directly on WhatsApp. No call centers and no waiting in line.</p></div>
         </div>
         <div class="why-item">
           <div class="ic">📍</div>
-          <div><h4>Kukugezaho ku buntu mu gihugu hose</h4><p>Tumiza aho ari ho hose mu Rwanda, dutegure ko ibicuruzwa bikugeraho ku buntu.</p></div>
+          <div><h4 id="why-3-title">Free delivery nationwide</h4><p id="why-3-text">Order from anywhere in Rwanda and we will arrange free delivery to you.</p></div>
         </div>
         <div class="why-item">
           <div class="ic">💬</div>
-          <div><h4>Inama z'inzobere</h4><p>Ntiwizeye icyakubera cyiza? Vugana n'umujyanama wacu w'inzobere mbere yo guhitamo igicuruzwa.</p></div>
+          <div><h4 id="why-4-title">Wellness guidance</h4><p id="why-4-text">Not sure what is right for you? Talk with our wellness advisor before choosing a product.</p></div>
         </div>
       </div>
     </div>
@@ -420,10 +424,10 @@
 
 <section id="contact" class="wrap">
   <div class="cta-band">
-    <h2>Ukeneye inama mbere yo gutumiza?</h2>
-    <p>Twandikire kuri WhatsApp — +250 788 877 136 — uvugane n'umujyanama wacu w'inzobere cyangwa utegure ko ukigezwaho ku buntu aho ari ho hose mu Rwanda.</p>
-    <a class="btn-primary" href="https://wa.me/250788877136?text=Mwaramutse%20ElWellHub%2C%20ndashaka%20gutanga%20itumizwa." target="_blank" rel="noopener">
-      Andika kuri +250 788 877 136
+    <h2 id="contact-title">Need advice before ordering?</h2>
+    <p id="contact-text">Message us on WhatsApp at +250 788 877 136 to speak with our wellness advisor or arrange free delivery anywhere in Rwanda.</p>
+    <a id="contact-btn" class="btn-primary" href="https://wa.me/250788877136?text=Hello%20ElWellHub%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
+      Message +250 788 877 136
     </a>
   </div>
 </section>
@@ -433,105 +437,340 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand"><img src="logo/elwellhub.svg" alt="ElWellHub logo">ElWellHub</div>
-        <p style="font-size:13.5px;color:#9FB4CD;max-width:280px;">Duhagarariye mu buryo bwigenga ibicuruzwa bya OQATA Wellness Solutions, dukorera i Kigali mu Rwanda.</p>
+        <p id="footer-copy" style="font-size:13.5px;color:#9FB4CD;max-width:280px;">An independent source for OQATA Wellness Solutions products, serving Kigali and Rwanda.</p>
       </div>
       <div>
-        <h5>Gura</h5>
-        <a href="#products">Ibicuruzwa byose</a>
-        <a href="#how">Uko watumiza</a>
-        <a href="#why">Kuki ElWellHub</a>
+        <h5 id="footer-shop">Shop</h5>
+        <a id="footer-all-products" href="#products">All products</a>
+        <a id="footer-how" href="#how">How to order</a>
+        <a id="footer-why" href="#why">Why ElWellHub</a>
       </div>
       <div>
-        <h5>Ikigo</h5>
+        <h5 id="footer-company">Company</h5>
         <a href="https://oqatawellness.com/" target="_blank" rel="noopener">OQATA Wellness Solutions</a>
-        <a href="https://oqatawellness.com/about/" target="_blank" rel="noopener">Ibyerekeye OQATA</a>
+        <a href="https://oqatawellness.com/about/" target="_blank" rel="noopener">About OQATA</a>
       </div>
       <div>
-        <h5>Twandikire</h5>
+        <h5 id="footer-contact">Contact</h5>
         <a href="https://wa.me/250788877136" target="_blank" rel="noopener">WhatsApp +250 788 877 136</a>
-        <a href="#contact">Kigali, Rwanda</a>
+        <a id="footer-location" href="#contact">Kigali, Rwanda</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 ElWellHub. Uhagarariye OQATA mu bwigenge.</span>
-      <span>Ibicuruzwa bikorerwa ku bufatanye na Earth's Creation USA.</span>
+      <span id="footer-bottom-1">© 2026 ElWellHub. Independent OQATA representative.</span>
+      <span id="footer-bottom-2">Products made in partnership with Earth's Creation USA.</span>
     </div>
-    <p class="disclaimer">ElWellHub ni urubuga rwigenga rugurishirizwaho ibicuruzwa, kandi si urubuga rwemewe rw'ikigo OQATA Wellness Solutions. Amakuru kuri ibi bicuruzwa ntarasuzumwa, kandi ntabwo bigenewe gusuzuma, kuvura, gukiza cyangwa gukumira indwara iyo ari yo yose. Banza ugishe inama inzobere mu by'ubuzima mbere yo gutangira gukoresha inyongera nshya.</p>
+    <p id="footer-disclaimer" class="disclaimer">ElWellHub is an independent product website and is not the official website of OQATA Wellness Solutions. Product information has not been evaluated and is not intended to diagnose, treat, cure, or prevent any disease. Consult a healthcare professional before starting a new supplement.</p>
   </div>
 </footer>
 
-<a class="float-wa" href="https://wa.me/250788877136?text=Mwaramutse%20ElWellHub%2C%20ndashaka%20gutumiza%20igicuruzwa." target="_blank" rel="noopener" aria-label="Twandikire kuri WhatsApp">
+<a class="float-wa" href="https://wa.me/250788877136?text=Hello%20ElWellHub%2C%20I%27d%20like%20to%20order%20a%20product." target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Zm-5.55 13.3h-.01a7.5 7.5 0 0 1-3.83-1.05l-.27-.16-2.75.81.82-2.68-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.35-7.44 7.47-7.44 2 0 3.87.78 5.28 2.19a7.38 7.38 0 0 1 2.18 5.26c0 4.1-3.35 7.44-7.47 7.44Zm4.09-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11a6.69 6.69 0 0 1-1.24-1.55c-.13-.22 0-.33.1-.44.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.07-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.62 2.47 3.92 3.47.55.24.98.38 1.31.48.55.17 1.06.15 1.45.09.44-.07 1.32-.54 1.51-1.06.19-.51.19-.95.13-1.05-.06-.1-.2-.15-.42-.26Z"/></svg>
 </a>
 
 <script>
-const products = [
-  {name:"Super Focus Gummies", cat:"Ubwonko no kwibanda", desc:"Bacopa Monnieri, Panax Ginseng na Rhodiola Rosea bifasha kwibuka, kwiga no kwibanda buri munsi.", price:"56,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
-  {name:"Resveratrol", cat:"Ubudahangarwa n'imbaraga", desc:"Ifasha kongera imbaraga mu mutwe, kugabanya umunaniro wo mu bwonko no gukomeza ubudahangarwa.", price:"46,200 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
-  {name:"Liver Care", cat:"Isuku n'igogora", desc:"Yagenewe gufasha umwijima kwisukura, kugabanya ibinure no kunoza igogora.", price:"60,800 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
-  {name:"Super Omega-3", cat:"Umutima n'ubudahangarwa", desc:"Ifasha umutima, kugenda neza kw'ingingo, ubudahangarwa n'imikorere y'ubwonko.", price:"58,500 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
-  {name:"Colon Detox", cat:"Isuku n'igogora", desc:"Uruvange rworoheje rufasha amara kugira ubuzima bwiza no gusya neza.", price:"45,600 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
-  {name:"Hair, Skin + Nails", cat:"Ubwiza", desc:"Uruvange rufasha umusatsi gukomera, uruhu kuba rwiza n'inzara kugira ubuzima bwiza.", price:"42,600 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
-  {name:"Andro-T", cat:"Ubuzima bw'abagabo", desc:"Yagenewe gufasha abagabo kugira imbaraga, ubushake n'uburinganire bw'imisemburo.", price:"59,800 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
-  {name:"Andro-Brew Cappuccino for Men", cat:"Ubuzima bw'abagabo", desc:"Ikinyobwa cy'ibyatsi gikora neza hamwe na Andro-T mu gufasha abagabo kugira imbaraga buri munsi.", price:"44,700 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
-  {name:"Trimtone Enhancer", cat:"Imicungire y'ibiro", desc:"Ifasha imikorere y'umubiri n'imicungire y'ibiro mu mibereho iboneye.", price:"50,600 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
-  {name:"Trimtone Tea", cat:"Imicungire y'ibiro", desc:"Icyayi cy'ibyatsi cyo kunywa buri munsi mu murongo wa Trimtone wo gucunga ibiro.", price:"30,800 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
-  {name:"Muscle-Bone Care", cat:"Ingingo n'amagufa", desc:"Ifasha amagufa gukomera, imitsi gukira no kugenda neza buri munsi.", price:"56,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
-  {name:"Joint Flex", cat:"Ingingo n'amagufa", desc:"Uruvange rufasha ingingo kugira ubuzima bwiza, kutababara no kugenda neza.", price:"63,800 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/JOINTFLEX-1024x1024.jpg"},
-  {name:"ImmuniKids Gummies", cat:"Abana", desc:"Utunyamavuta turyoshye tugenewe gufasha abana kugira ubudahangarwa buri munsi.", price:"32,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0927-819x1024.jpg"},
-  {name:"Feminine Brew", cat:"Ubuzima bw'abagore", desc:"Icyayi cy'ibyatsi gifasha abagore kuringaniza imisemburo no kugira ubuzima bwiza.", price:"48,700 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/FEMI-BREW-992x1024.jpg"},
-  {name:"Total Vitality Blend", cat:"Uruvange rw'ubuzima", desc:"Uruvange rwa buri munsi rufasha imbaraga, ubudahangarwa n'ubuzima muri rusange.", price:"50,000 RWF", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TOTAL-VITALITY-BLEND-1024x1024.jpg"}
-];
+const productsByLang = {
+  en: [
+    {name:"Super Focus Gummies", cat:"Focus and cognition", desc:"Bacopa Monnieri, Panax Ginseng, and Rhodiola Rosea support memory, learning, and daily focus.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
+    {name:"Resveratrol", cat:"Immunity and energy", desc:"Supports mental energy, helps reduce brain fatigue, and supports healthy immune function.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
+    {name:"Liver Care", cat:"Digestive health", desc:"Helps support natural liver cleansing, healthy digestion, and overall wellness.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
+    {name:"Super Omega-3", cat:"Heart and brain health", desc:"Supports heart health, healthy circulation, immunity, and brain performance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
+    {name:"Colon Detox", cat:"Digestive health", desc:"A gentle cleanse that supports gut comfort, digestive flow, and daily balance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
+    {name:"Hair, Skin + Nails", cat:"Beauty", desc:"Supports hair strength, skin glow, and strong nails for everyday confidence.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
+    {name:"Andro-T", cat:"Men's wellness", desc:"Formulated to support male vitality, stamina, and hormonal balance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
+    {name:"Andro-Brew Cappuccino for Men", cat:"Men's wellness", desc:"A nourishing herbal coffee blend designed to support daily energy and endurance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
+    {name:"Trimtone Enhancer", cat:"Weight support", desc:"Supports metabolism, appetite control, and a balanced daily routine.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
+    {name:"Trimtone Tea", cat:"Weight support", desc:"A wellness tea blend to complement your routine and support healthy habits.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
+    {name:"Muscle-Bone Care", cat:"Joint and bone health", desc:"Supports bone strength, circulation, and healthy movement for active days.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
+    {name:"Joint Flex", cat:"Joint and bone health", desc:"Helps maintain joint comfort, flexibility, and smooth everyday movement.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/JOINTFLEX-1024x1024.jpg"},
+    {name:"ImmuniKids Gummies", cat:"Kids", desc:"A tasty, easy daily option to support children’s wellbeing and immunity.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0927-819x1024.jpg"},
+    {name:"Feminine Brew", cat:"Women's wellness", desc:"A daily herbal tea designed to support hormonal balance and everyday comfort.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/FEMI-BREW-992x1024.jpg"},
+    {name:"Total Vitality Blend", cat:"Daily wellness", desc:"A broad-spectrum blend to support energy, immunity, and overall vitality.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TOTAL-VITALITY-BLEND-1024x1024.jpg"}
+  ],
+  rw: [
+    {name:"Super Focus Gummies", cat:"Guhanga ubwonko no gutekereza", desc:"Bacopa Monnieri, Panax Ginseng, na Rhodiola Rosea bifasha mu gutekereza, kwiga no gukomeza ibitekerezo bya buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
+    {name:"Resveratrol", cat:"Ubuzima n'imbaraga", desc:"Ifasha imbaraga z'ubwonko, igabanya ubugumba bw'ubwonko kandi ikongerera ubudahangarwa.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
+    {name:"Liver Care", cat:"Ubuzima bw'umwijima", desc:"Yagenewe gufasha umwijima kwisukura, guteka neza no kugumana ubuzima bwiza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
+    {name:"Super Omega-3", cat:"Umutima n'ubwonko", desc:"Ifasha umutima, kugenda neza kw'ingingo, ubudahangarwa n'imikorere y'ubwonko.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
+    {name:"Colon Detox", cat:"Ubuzima bw'amara", desc:"Uruvange rworoheje rufasha amara kugira ubuzima bwiza no gusya neza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
+    {name:"Hair, Skin + Nails", cat:"Ubwiza", desc:"Rufasha umusatsi gukomera, uruhu kuba rwiza n'inzara kugira ubuzima bwiza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
+    {name:"Andro-T", cat:"Ubuzima bw'abagabo", desc:"Yagenewe gufasha abagabo kugira imbaraga, ubushake n'uburinganire bw'imisemburo.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
+    {name:"Andro-Brew Cappuccino for Men", cat:"Ubuzima bw'abagabo", desc:"Ikinyobwa cy'ibyatsi gikora neza hamwe na Andro-T mu gufasha abagabo kugira imbaraga buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
+    {name:"Trimtone Enhancer", cat:"Gucunga ibiro", desc:"Ifasha imikorere y'umubiri n'imicungire y'ibiro mu mibereho iboneye.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
+    {name:"Trimtone Tea", cat:"Gucunga ibiro", desc:"Icyayi cy'ibyatsi cyo kunywa buri munsi mu murongo wa Trimtone wo gucunga ibiro.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
+    {name:"Muscle-Bone Care", cat:"Ingingo n'amagufa", desc:"Ifasha amagufa gukomera, imitsi gukira no kugenda neza buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
+    {name:"Joint Flex", cat:"Ingingo n'amagufa", desc:"Uruvange rufasha ingingo kugira ubuzima bwiza, kutababara no kugenda neza.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/JOINTFLEX-1024x1024.jpg"},
+    {name:"ImmuniKids Gummies", cat:"Abana", desc:"Utunyamavuta turyoshye tugenewe gufasha abana kugira ubudahangarwa buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0927-819x1024.jpg"},
+    {name:"Feminine Brew", cat:"Ubuzima bw'abagore", desc:"Icyayi cy'ibyatsi gifasha abagore kuringaniza imisemburo no kugira ubuzima bwiza.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/FEMI-BREW-992x1024.jpg"},
+    {name:"Total Vitality Blend", cat:"Ubuzima bwa buri munsi", desc:"Uruvange rwa buri munsi rufasha imbaraga, ubudahangarwa n'ubuzima muri rusange.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TOTAL-VITALITY-BLEND-1024x1024.jpg"}
+  ]
+};
 
+const translations = {
+  en: {
+    nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', contact:'Contact', cta:'Order on WhatsApp' },
+    hero: {
+      eyebrow:'Better health · Better life · Kigali-based service',
+      title:'Choose better every day for <span>more energy and wellness.</span>',
+      lead:'ElWellHub connects you with authentic OQATA Wellness Solutions products, free delivery anywhere in Rwanda, and personal guidance to help you choose well.',
+      browse:'Browse products',
+      advisor:'Talk to an advisor',
+      stats:['products available','authentic and sealed','order confirmation'],
+      tag:'Most popular'
+    },
+    trust:['FDA-approved facilities','GMP certified','NSF certified','ISO 22000','Free delivery across Rwanda','Personal wellness advisor'],
+    productsTitle:'Choose a product, message us, and we will deliver it.',
+    productsSubtitle:'Every product listed here is authentic OQATA. Click "Order on WhatsApp" to confirm availability and arrange free delivery anywhere in Rwanda, or speak with our wellness advisor first.',
+    how: {
+      kicker:'Simple, no account required',
+      title:'Order in three easy steps.',
+      step1:'Choose a product',
+      step1Text:'Browse the products above, or ask our wellness advisor which option best supports your goals.',
+      step2:'Click "Order on WhatsApp"',
+      step2Text:'A message opens with the product name already included. Just send it; no forms are required.',
+      step3:'Confirm and receive',
+      step3Text:'We confirm your order, answer any questions, and arrange free delivery anywhere in Rwanda.'
+    },
+    why: {
+      kicker:'Why order from ElWellHub',
+      title:'A trusted way to get authentic OQATA products.',
+      list:[
+        ['Verified and sealed products','Every product comes from OQATA Wellness Solutions inventory. No repackaging and no guesswork.'],
+        ['Fast, personal service','Message us directly on WhatsApp. No call centers and no waiting in line.'],
+        ['Free delivery nationwide','Order from anywhere in Rwanda and we will arrange free delivery to you.'],
+        ['Wellness guidance','Not sure what is right for you? Talk with our wellness advisor before choosing a product.']
+      ]
+    },
+    contact: {
+      title:'Need advice before ordering?',
+      text:'Message us on WhatsApp at +250 788 877 136 to speak with our wellness advisor or arrange free delivery anywhere in Rwanda.',
+      btn:'Message +250 788 877 136'
+    },
+    footer: {
+      copy:'An independent source for OQATA Wellness Solutions products, serving Kigali and Rwanda.',
+      shop:'Shop',
+      allProducts:'All products',
+      how:'How to order',
+      why:'Why ElWellHub',
+      company:'Company',
+      contact:'Contact',
+      location:'Kigali, Rwanda',
+      bottom1:'© 2026 ElWellHub. Independent OQATA representative.',
+      bottom2:"Products made in partnership with Earth's Creation USA.",
+      disclaimer:'ElWellHub is an independent product website and is not the official website of OQATA Wellness Solutions. Product information has not been evaluated and is not intended to diagnose, treat, cure, or prevent any disease. Consult a healthcare professional before starting a new supplement.'
+    },
+    all:'All',
+    buy:'Order via WhatsApp',
+    waPrefix:'Hello ElWellHub, I would like to order '
+  },
+  rw: {
+    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki dushaka', contact:'Twandikire', cta:'Tegura kuri WhatsApp' },
+    hero: {
+      eyebrow:'Ubuzima bwiza · Ubuzima bwiza buri munsi · Serivisi yo muri Kigali',
+      title:'Hitamo neza buri munsi kugira <span>imbaraga nyinshi n’ubuzima bwiza.</span>',
+      lead:'ElWellHub ikora ku bintu by’ukuri bya OQATA Wellness Solutions, itanga delivery ku buntu mu Rwanda rwose, kandi igatanga ubujyanama bw’ibanze kugira ngo ubone igisubizo gikwiye.',
+      browse:'Reba ibicuruzwa',
+      advisor:'Baza umujyanama',
+      stats:['ibicuruzwa biriho','byemewe kandi byuzuye','hamwe no kwemeza',],
+      tag:'Cyamamaye'
+    },
+    trust:['Ibigo byemewe na FDA','Byemewe na GMP','Byemewe na NSF','ISO 22000','Delivery y’ubuntu mu Rwanda rwose','Umujyanama w’ubuzima'],
+    productsTitle:'Hitamo ibicuruzwa, utwandikire, tugihe ikurimo.',
+    productsSubtitle:'Ibicuruzwa byose biri hano ni ibya OQATA byemewe. Kanda "Tegura kuri WhatsApp" kugirango uhamagare uboneka no gutegurwa ku buntu mu Rwanda rwose, cyangwa uvugane n’umujyanama w’ubuzima.',
+    how: {
+      kicker:'Byoroshye, nta konti ikenewe',
+      title:'Tegura mu ntambwe eshatu.',
+      step1:'Hitamo ibicuruzwa',
+      step1Text:'Reba ibicuruzwa byavuzwe haruguru, cyangwa ubaze umujyanama w’ubuzima icyo gikuranga.',
+      step2:'Kanda "Tegura kuri WhatsApp"',
+      step2Text:'Ubutumwa buzakugarukira ku izina ry’ibicuruzwa byatoranyijwe. Ubu butumwa burasubizwa nta fomu zidasabwa.',
+      step3:'Emeza ugahabwa',
+      step3Text:'Tuzemeza gahunda yawe, tugasubiza ibibazo byose, tukakuzana ku buntu mu Rwanda rwose.'
+    },
+    why: {
+      kicker:'Kuki ugura kuri ElWellHub',
+      title:'Uburyo bwizewe bwo kubona ibicuruzwa by’ukuri bya OQATA.',
+      list:[
+        ['Ibicuruzwa byemewe kandi bifunze neza','Ibicuruzwa byose biva mu bubiko bwa OQATA Wellness Solutions. Nta kuvugurura cyangwa guhamagara ku bugambanyi.'],
+        ['Serivisi yihuse kandi yihariye','Twandikire DIRECT kuri WhatsApp. Nta serivisi z’ibigo byabigenewe cyangwa gutegereza.'],
+        ['Delivery y’ubuntu mu gihugu cyose','Tegura aho uri hose mu Rwanda, tuzakurungika ku buntu.'],
+        ['Ubujyanama bw’ubuzima','Ntabwo wumva neza icyo ukwiye guhitamo? Baza umujyanama w’ubuzima mbere yo guhitamo ibicuruzwa.']
+      ]
+    },
+    contact: {
+      title:'Ukeneye ubujyanama mbere yo gutegura?',
+      text:'Twandikire kuri WhatsApp +250 788 877 136 kugira ngo uvugane n’umujyanama w’ubuzima cyangwa usabe delivery y’ubuntu mu Rwanda rwose.',
+      btn:'Twandikire +250 788 877 136'
+    },
+    footer: {
+      copy:'Aho ibicuruzwa by’ukuri bya OQATA Wellness Solutions bitangirwa, mu Kigali no mu Rwanda.',
+      shop:'Ibicuruzwa',
+      allProducts:'Ibicuruzwa byose',
+      how:'Uburyo bwo gutumiza',
+      why:'Kuki ElWellHub',
+      company:'Izi',
+      contact:'Twandikire',
+      location:'Kigali, Rwanda',
+      bottom1:'© 2026 ElWellHub. Ihagarariye OQATA ku giti cye.',
+      bottom2:'Ibicuruzwa bikozwe mu bufatanye na Earth\'s Creation USA.',
+      disclaimer:'ElWellHub ni urubuga rwigenga ntiruri urubuga rwemewe rwa OQATA Wellness Solutions. Amakuru ku bicuruzwa ntabwo yagenzuwe kandi ntabwo agenewe kuvura, gukiza, cyangwa gukumira indwara. Jya kubaza umuganga mbere yo gutangira ibinyobwa cyangwa ibiyongera.'
+    },
+    all:'Byose',
+    buy:'Tegura kuri WhatsApp',
+    waPrefix:'Mwaramutse ElWellHub, ndashaka gutumiza '
+  }
+};
+
+const state = { lang: 'en', selectedCategory: 'All' };
 const grid = document.getElementById('product-grid');
 const filterBar = document.getElementById('filters');
-const categories = ["Byose", ...new Set(products.map(p=>p.cat))];
 
-function waLink(name){
-  const msg = `Mwaramutse ElWellHub, ndashaka gutumiza ${name}. Ese irahari?`;
+function waLink(name, lang = state.lang){
+  const prefix = lang === 'en' ? 'Hello ElWellHub, I would like to order ' : 'Mwaramutse ElWellHub, ndashaka gutumiza ';
+  const msg = `${prefix}${name}. Is it available?`;
   return `https://wa.me/250788877136?text=${encodeURIComponent(msg)}`;
 }
 
-function renderGrid(filter){
-  grid.innerHTML = "";
-  products
-    .filter(p => filter === "Byose" || p.cat === filter)
-    .forEach(p => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <div class="thumb">
-          <span class="cat-tag">${p.cat}</span>
-          <img src="${p.img}" alt="${p.name}" loading="lazy">
-        </div>
-        <div class="body">
-          <h3>${p.name}</h3>
-          <p class="desc">${p.desc}</p>
-          <div class="row">
-            <div class="price">${p.price}<small>ku gapaki</small></div>
-            <a class="buy-btn" href="${waLink(p.name)}" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Z"/></svg>
-              Tumiza kuri WhatsApp
-            </a>
-          </div>
-        </div>`;
-      grid.appendChild(card);
-    });
+function getCategories(lang){
+  const all = productsByLang[lang].map(p => p.cat);
+  return [translations[lang].all, ...new Set(all)];
 }
 
-categories.forEach(cat => {
-  const btn = document.createElement('button');
-  btn.className = 'filter-btn' + (cat === 'Byose' ? ' active' : '');
-  btn.textContent = cat;
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    renderGrid(cat);
+function applyLanguage(lang){
+  state.lang = lang;
+  document.getElementById('nav-home').textContent = translations[lang].nav.home;
+  document.getElementById('nav-products').textContent = translations[lang].nav.products;
+  document.getElementById('nav-how').textContent = translations[lang].nav.how;
+  document.getElementById('nav-why').textContent = translations[lang].nav.why;
+  document.getElementById('nav-contact').textContent = translations[lang].nav.contact;
+  document.getElementById('nav-cta').textContent = translations[lang].nav.cta;
+  document.getElementById('hero-eyebrow').innerHTML = `<span class="pulse"></span> ${translations[lang].hero.eyebrow}`;
+  document.getElementById('hero-title').innerHTML = translations[lang].hero.title;
+  document.getElementById('hero-lead').textContent = translations[lang].hero.lead;
+  document.getElementById('hero-browse').innerHTML = `${translations[lang].hero.browse}<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  document.getElementById('hero-advisor').textContent = translations[lang].hero.advisor;
+  document.getElementById('hero-stat-1').textContent = translations[lang].hero.stats[0];
+  document.getElementById('hero-stat-2').textContent = translations[lang].hero.stats[1];
+  document.getElementById('hero-stat-3').textContent = translations[lang].hero.stats[2];
+
+  document.getElementById('trust-1').textContent = translations[lang].trust[0];
+  document.getElementById('trust-2').textContent = translations[lang].trust[1];
+  document.getElementById('trust-3').textContent = translations[lang].trust[2];
+  document.getElementById('trust-4').textContent = translations[lang].trust[3];
+  document.getElementById('trust-5').textContent = translations[lang].trust[4];
+  document.getElementById('trust-6').textContent = translations[lang].trust[5];
+
+  document.getElementById('products-title').textContent = translations[lang].productsTitle;
+  document.getElementById('products-subtitle').textContent = translations[lang].productsSubtitle;
+
+  document.getElementById('how-kicker').textContent = translations[lang].how.kicker;
+  document.getElementById('how-title').textContent = translations[lang].how.title;
+  document.getElementById('step-1-title').textContent = translations[lang].how.step1;
+  document.getElementById('step-1-text').textContent = translations[lang].how.step1Text;
+  document.getElementById('step-2-title').textContent = translations[lang].how.step2;
+  document.getElementById('step-2-text').textContent = translations[lang].how.step2Text;
+  document.getElementById('step-3-title').textContent = translations[lang].how.step3;
+  document.getElementById('step-3-text').textContent = translations[lang].how.step3Text;
+
+  document.getElementById('why-kicker').textContent = translations[lang].why.kicker;
+  document.getElementById('why-title').textContent = translations[lang].why.title;
+  document.getElementById('why-1-title').textContent = translations[lang].why.list[0][0];
+  document.getElementById('why-1-text').textContent = translations[lang].why.list[0][1];
+  document.getElementById('why-2-title').textContent = translations[lang].why.list[1][0];
+  document.getElementById('why-2-text').textContent = translations[lang].why.list[1][1];
+  document.getElementById('why-3-title').textContent = translations[lang].why.list[2][0];
+  document.getElementById('why-3-text').textContent = translations[lang].why.list[2][1];
+  document.getElementById('why-4-title').textContent = translations[lang].why.list[3][0];
+  document.getElementById('why-4-text').textContent = translations[lang].why.list[3][1];
+
+  document.getElementById('contact-title').textContent = translations[lang].contact.title;
+  document.getElementById('contact-text').textContent = translations[lang].contact.text;
+  document.getElementById('contact-btn').textContent = translations[lang].contact.btn;
+
+  document.getElementById('footer-copy').textContent = translations[lang].footer.copy;
+  document.getElementById('footer-shop').textContent = translations[lang].footer.shop;
+  document.getElementById('footer-all-products').textContent = translations[lang].footer.allProducts;
+  document.getElementById('footer-how').textContent = translations[lang].footer.how;
+  document.getElementById('footer-why').textContent = translations[lang].footer.why;
+  document.getElementById('footer-company').textContent = translations[lang].footer.company;
+  document.getElementById('footer-contact').textContent = translations[lang].footer.contact;
+  document.getElementById('footer-location').textContent = translations[lang].footer.location;
+  document.getElementById('footer-bottom-1').textContent = translations[lang].footer.bottom1;
+  document.getElementById('footer-bottom-2').textContent = translations[lang].footer.bottom2;
+  document.getElementById('footer-disclaimer').textContent = translations[lang].footer.disclaimer;
+
+  document.querySelectorAll('.language-switcher button').forEach(button => {
+    button.classList.toggle('active', button.dataset.lang === lang);
   });
-  filterBar.appendChild(btn);
+
+  const categoryNames = getCategories(lang);
+  const filterButtons = [...document.querySelectorAll('.filter-btn')];
+  filterButtons.forEach(btn => {
+    const category = btn.dataset.category;
+    btn.textContent = categoryNames.includes(category) ? category : category;
+  });
+
+  renderGrid(state.selectedCategory, lang);
+}
+
+function renderGrid(filter, lang = state.lang){
+  grid.innerHTML = '';
+  const products = productsByLang[lang];
+  const filtered = products.filter(p => filter === translations[lang].all || p.cat === filter);
+
+  filtered.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="thumb">
+        <span class="cat-tag">${p.cat}</span>
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+      </div>
+      <div class="body">
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc}</p>
+        <div class="row">
+          <a class="buy-btn" href="${waLink(p.name, lang)}" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Z"/></svg>
+            ${translations[lang].buy}
+          </a>
+        </div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function setupFilters(lang){
+  filterBar.innerHTML = '';
+  const categories = getCategories(lang);
+  categories.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'filter-btn' + (cat === translations[lang].all ? ' active' : '');
+    btn.dataset.category = cat;
+    btn.textContent = cat;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      state.selectedCategory = cat;
+      renderGrid(cat, lang);
+    });
+    filterBar.appendChild(btn);
+  });
+}
+
+const languageButtons = document.querySelectorAll('.language-switcher button');
+languageButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const lang = button.dataset.lang;
+    state.selectedCategory = translations[lang].all;
+    setupFilters(lang);
+    applyLanguage(lang);
+  });
 });
 
-renderGrid("Byose");
+setupFilters('en');
+applyLanguage('en');
 </script>
 
 </body>
