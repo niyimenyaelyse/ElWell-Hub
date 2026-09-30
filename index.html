@@ -54,9 +54,10 @@
       "itemListElement":[
         {"@type":"ListItem","position":1,"name":"Super Focus Gummies","url":"https://el-well-hub.vercel.app/#products"},
         {"@type":"ListItem","position":2,"name":"Resveratrol","url":"https://el-well-hub.vercel.app/#products"},
-        {"@type":"ListItem","position":3,"name":"Liver Care","url":"https://el-well-hub.vercel.app/#products"},
-        {"@type":"ListItem","position":4,"name":"Super Omega-3","url":"https://el-well-hub.vercel.app/#products"},
-        {"@type":"ListItem","position":5,"name":"Colon Detox","url":"https://el-well-hub.vercel.app/#products"},
+        {"@type":"ListItem","position":3,"name":"GlucoBalance+","url":"https://el-well-hub.vercel.app/#products"},
+        {"@type":"ListItem","position":4,"name":"Liver Care","url":"https://el-well-hub.vercel.app/#products"},
+        {"@type":"ListItem","position":5,"name":"Super Omega-3","url":"https://el-well-hub.vercel.app/#products"},
+        {"@type":"ListItem","position":6,"name":"Colon Detox","url":"https://el-well-hub.vercel.app/#products"},
         {"@type":"ListItem","position":6,"name":"Hair, Skin + Nails","url":"https://el-well-hub.vercel.app/#products"},
         {"@type":"ListItem","position":7,"name":"Andro-T","url":"https://el-well-hub.vercel.app/#products"},
         {"@type":"ListItem","position":8,"name":"Andro-Brew Cappuccino for Men","url":"https://el-well-hub.vercel.app/#products"},
@@ -245,6 +246,11 @@
     position:relative;background:#F1ECE2;height:210px;
   }
   .card .thumb img{width:100%;height:100%;object-fit:cover;}
+  .card .thumb img[src*="Glucobalance"]{
+    object-fit:contain;
+    padding:18px 16px 8px;
+    background:linear-gradient(180deg,#F7F3EE 0%, #F1EEE8 100%);
+  }
   .card .cat-tag{
     position:absolute;top:12px;left:12px;
     background:rgba(11,37,69,0.85);color:var(--white);
@@ -412,7 +418,7 @@
         <a id="hero-advisor" class="btn-ghost" href="https://wa.me/250788877136?text=Hello%20ElWellHub%2C%20I%27d%20like%20to%20speak%20with%20a%20wellness%20advisor%20before%20choosing%20a%20product." target="_blank" rel="noopener">Talk to an advisor</a>
       </div>
       <div class="hero-stats">
-        <div><p>15+</p><p id="hero-stat-1">products available</p></div>
+        <div><p>16+</p><p id="hero-stat-1">products available</p></div>
         <div><p>100%</p><p id="hero-stat-2">authentic and sealed</p></div>
         <div><p>&lt;24h</p><p id="hero-stat-3">order confirmation</p></div>
       </div>
@@ -560,6 +566,7 @@ const productsByLang = {
   en: [
     {name:"Super Focus Gummies", cat:"Focus and cognition", desc:"Bacopa Monnieri, Panax Ginseng, and Rhodiola Rosea support memory, learning, and daily focus.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
     {name:"Resveratrol", cat:"Immunity and energy", desc:"Supports mental energy, helps reduce brain fatigue, and supports healthy immune function.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
+    {name:"GlucoBalance+", cat:"Blood sugar support", desc:"Helps support healthy glucose metabolism, steady daily energy, and balanced insulin function.", img:"https://oqatawellness.com/wp-content/uploads/2026/09/Glucobalance.png"},
     {name:"Liver Care", cat:"Digestive health", desc:"Helps support natural liver cleansing, healthy digestion, and overall wellness.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
     {name:"Super Omega-3", cat:"Heart and brain health", desc:"Supports heart health, healthy circulation, immunity, and brain performance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
     {name:"Colon Detox", cat:"Digestive health", desc:"A gentle cleanse that supports gut comfort, digestive flow, and daily balance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
@@ -577,6 +584,7 @@ const productsByLang = {
   rw: [
     {name:"Super Focus Gummies", cat:"Guhanga ubwonko no gutekereza", desc:"Bacopa Monnieri, Panax Ginseng, na Rhodiola Rosea bifasha mu gutekereza, kwiga no gukomeza ibitekerezo bya buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0903-819x1024.jpg"},
     {name:"Resveratrol", cat:"Ubuzima n'imbaraga", desc:"Ifasha imbaraga z'ubwonko, igabanya ubugumba bw'ubwonko kandi ikongerera ubudahangarwa.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0926-819x1024.jpg"},
+    {name:"GlucoBalance+", cat:"Gufasha glucose", desc:"Ifasha imikorere ya glucose, imbaraga za buri munsi, n'ubushobozi bwa insulin kugumana uburinganire.", img:"https://oqatawellness.com/wp-content/uploads/2026/09/Glucobalance.png"},
     {name:"Liver Care", cat:"Ubuzima bw'umwijima", desc:"Yagenewe gufasha umwijima kwisukura, guteka neza no kugumana ubuzima bwiza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0922-819x1024.jpg"},
     {name:"Super Omega-3", cat:"Umutima n'ubwonko", desc:"Ifasha umutima, kugenda neza kw'ingingo, ubudahangarwa n'imikorere y'ubwonko.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0923-819x1024.jpg"},
     {name:"Colon Detox", cat:"Ubuzima bw'amara", desc:"Uruvange rworoheje rufasha amara kugira ubuzima bwiza no gusya neza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
@@ -601,6 +609,10 @@ const productDetails = {
   "Resveratrol": {
     en: "Resveratrol is an antioxidant compound studied for cellular protection and healthy aging. It may support normal inflammation and circulation, but it should not replace prescribed care or a balanced diet.",
     rw: "Resveratrol ni ikinyabutabire kirinda uturemangingo kandi kigakorerwa ubushakashatsi ku gusaza neza. Gishobora gufasha umubiri, ariko ntigisimbura imiti cyangwa indyo yuzuye."
+  },
+  "GlucoBalance+": {
+    en: "GlucoBalance+ is designed to support healthy glucose metabolism, insulin function, carbohydrate processing, and steady daily energy. It combines berberine, gymnema, bitter melon, alpha lipoic acid, chromium, magnesium, and banaba leaf to complement balanced eating, regular movement, and appropriate medical care.",
+    rw: "GlucoBalance+ igenewe gufasha imikorere ya glucose, imikorere ya insulin, gutunganya carbohydrate, n'imbaraga za buri munsi. Ikarimo berberine, gymnema, bitter melon, alpha lipoic acid, chromium, magnesium, na banaba leaf, kugira ngo ijyanye n'indyo iboneye, imyitozo isanzwe, kandi ubujyanama bw'umuganga."
   },
   "Liver Care": {
     en: "Ingredients are traditionally used to support normal liver function and digestion. It does not detox the body from alcohol, medicines, or poisoning; seek medical help for yellow eyes, severe pain, or persistent nausea.",
