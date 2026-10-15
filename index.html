@@ -331,6 +331,15 @@
   .foot-grid h5{color:var(--white);font-size:14px;margin-bottom:16px;font-family:'Sora';}
   .foot-grid a{display:block;text-decoration:none;color:#B9C7DC;font-size:14px;margin-bottom:10px;transition:color .15s;}
   .foot-grid a:hover{color:var(--orange);}
+  .social-links{display:flex;gap:10px;align-items:center;}
+  .social-links a{display:flex;width:36px;height:36px;align-items:center;justify-content:center;border:1px solid transparent;border-radius:50%;margin:0;color:var(--white);transition:filter .15s,transform .15s;}
+  .social-links a:hover{color:var(--white);filter:brightness(1.12);transform:translateY(-2px);}
+  .social-links a:nth-child(1){background:#E4405F;border-color:#E4405F;}
+  .social-links a:nth-child(2){background:#1877F2;border-color:#1877F2;}
+  .social-links a:nth-child(3){background:#000000;border-color:#25F4EE;}
+  .social-links a:nth-child(4){background:#000000;border-color:#FFFFFF;}
+  .social-links a:nth-child(4):hover{color:#FFFFFF;}
+  .social-links svg{width:17px;height:17px;fill:currentColor;}
   .foot-brand{display:flex;align-items:center;gap:8px;font-family:'Sora';font-weight:700;color:var(--white);font-size:19px;margin-bottom:12px;}
   .foot-brand .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);}
   .foot-brand img{width:30px;height:30px;border-radius:9px;object-fit:cover;}
@@ -552,6 +561,23 @@
         <a href="https://wa.me/250788877136" target="_blank" rel="noopener">WhatsApp +250 788 877 136</a>
         <a id="footer-location" href="#contact">Kigali, Rwanda</a>
       </div>
+      <div>
+        <h5 id="footer-social">Follow us</h5>
+        <div class="social-links" aria-label="Social media links">
+          <a href="https://www.instagram.com/_____elyse_____/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/elwellhub.rw" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-8h2.75l.42-3h-3.17V8.08c0-.87.24-1.46 1.5-1.46h1.8V3.94c-.31-.04-1.38-.14-2.62-.14-2.59 0-4.36 1.58-4.36 4.48V10H7v3h2.82v8h3.68Z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/@elwellhub.rw" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 3c.2 1.72 1.16 2.93 2.9 3.04v2.67a7.3 7.3 0 0 1-2.9-.67v5.55A5.4 5.4 0 1 1 10.83 8.3v2.8a2.57 2.57 0 1 0 1.84 2.46V3h2.83Z"/></svg>
+          </a>
+          <a href="https://x.com/Elwell_Hub" target="_blank" rel="noopener" aria-label="X" title="X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.24l-4.89-6.39L6.48 22H3.37l7.24-8.28L2.8 2h6.4l4.42 5.84L18.9 2Zm-1.1 17.9h1.73L8.26 4H6.4l11.4 15.9Z"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
     <div class="foot-bottom">
       <span id="footer-bottom-1">© 2026 Elwell Hub. Independent OQATA representative.</span>
@@ -720,6 +746,7 @@ const translations = {
       why:'Why Elwell Hub',
       company:'Company',
       contact:'Contact',
+      social:'Follow us',
       location:'Kigali, Rwanda',
       bottom1:'© 2026 Elwell Hub. Independent OQATA representative.',
       bottom2:"Products made in partnership with Earth's Creation USA.",
@@ -732,19 +759,19 @@ const translations = {
     waPrefix:'Hello Elwell Hub, I would like to order '
   },
   rw: {
-    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki dushaka', contact:'Twandikire', cta:'Tumiza kuri WhatsApp' },
+    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki Elwell Hub', contact:'Twandikire', cta:'Tumiza kuri WhatsApp' },
     hero: {
-      eyebrow:'Ubuzima bwiza · Ubuzima bwiza buri munsi · Serivisi yo muri Kigali',
-      title:'Hitamo neza buri munsi kugira <span>imbaraga nyinshi n’ubuzima bwiza.</span>',
-      lead:'Elwell Hub ikora ku bintu by’ukuri bya OQATA Wellness Solutions, itanga delivery ku buntu mu Rwanda rwose, kandi igatanga ubujyanama bw’ibanze kugira ngo ubone igisubizo gikwiye.',
+      eyebrow:'Ubuzima bwiza · Imibereho myiza · Serivisi iboneka i Kigali',
+      title:'Hitamo neza buri munsi ugire <span>imbaraga nyinshi n’ubuzima bwiza.</span>',
+      lead:'Elwell Hub ni ikigo gitanga serivisi z’imirire n’imitegurire y’indyo, cyibanda ku gufasha abantu bo mu Rwanda kwirinda no gucunga indwara zitandura (NCDs) binyuze mu nama zifatika ku mirire. Ibyongera by’imirire dutanga bigenewe kunganira gahunda yawe yo kwitabwaho.',
       browse:'Reba ibicuruzwa',
       advisor:'Baza umujyanama',
       stats:['ibicuruzwa biriho','byemewe kandi byuzuye','hamwe no kwemeza',],
       tag:'Cyamamaye'
     },
     trust:['Ibigo byemewe na FDA','Byemewe na GMP','Byemewe na NSF','ISO 22000','Delivery y’ubuntu mu Rwanda rwose','Umujyanama w’ubuzima'],
-    productsTitle:'Hitamo ibicuruzwa, utwandikire, tugihe ikurimo.',
-    productsSubtitle:'Ibicuruzwa byose biri hano ni ibya OQATA byemewe. Kanda "Tumiza kuri WhatsApp" kugirango uhamagare uboneka no gutegurwa ku buntu mu Rwanda rwose, cyangwa uvugane n’umujyanama w’ubuzima.',
+    productsTitle:'Hitamo igihuye n’intego zawe z’ubuzima, utwandikire tukigushyikirize.',
+    productsSubtitle:'Ibyongera by’imirire ni inyunganira gusa; ntibisimbura imiti cyangwa ubuvuzi. Vugana n’umujyanama wacu w’imirire kugira ngo uhitemo igihuye n’intego zawe z’imirire na gahunda yawe yo kwitabwaho.',
     how: {
       kicker:'Byoroshye, nta konti ikenewe',
       title:'Tegura mu ntambwe eshatu.',
@@ -757,27 +784,28 @@ const translations = {
     },
     why: {
       kicker:'Kuki ugura kuri Elwell Hub',
-      title:'Uburyo bwizewe bwo kubona ibicuruzwa by’ukuri bya OQATA.',
+      title:'Ubujyanama ku mirire bushingiye ku ntego zawe z’ubuzima.',
       list:[
-        ['Ibicuruzwa byemewe kandi bifunze neza','Ibicuruzwa byose biva mu bubiko bwa OQATA Wellness Solutions. Nta kuvugurura cyangwa guhamagara ku bugambanyi.'],
-        ['Serivisi yihuse kandi yihariye','Twandikire DIRECT kuri WhatsApp. Nta serivisi z’ibigo byabigenewe cyangwa gutegereza.'],
-        ['Delivery y’ubuntu mu gihugu cyose','Tegura aho uri hose mu Rwanda, tuzakurungika ku buntu.'],
-        ['Ubujyanama bw’ubuzima','Ntabwo wumva neza icyo ukwiye guhitamo? Baza umujyanama w’ubuzima mbere yo guhitamo ibicuruzwa.']
+        ['Ibyongera by’imirire byizewe kandi bifunze neza','Ibyongera by’imirire bituruka ku bubiko bwa OQATA Wellness Solutions kandi bigera ku bakiriya bifunze neza.'],
+        ['Serivisi yihariye kandi yihuse','Twandikire kuri WhatsApp kugira ngo tugufashe gutangira no kubona amakuru akwiye.'],
+        ['Gushyikirizwa ku buntu mu Rwanda hose','Tanga aho uherereye hose mu Rwanda, tugushyikirize ibyo watumije ku buntu.'],
+        ['Ubujyanama ku mirire','Ntuzi igikwiriye? Vugana n’umujyanama wacu w’imirire mbere yo guhitamo inyunganira.']
       ]
     },
     contact: {
-      title:'Ukeneye ubujyanama mbere yo gutegura?',
-      text:'Twandikire kuri WhatsApp +250 788 877 136 kugira ngo uvugane n’umujyanama w’ubuzima cyangwa usabe delivery y’ubuntu mu Rwanda rwose.',
+      title:'Ukeneye ubujyanama ku mirire mbere yo gutumiza?',
+      text:'Twandikire kuri WhatsApp +250 788 877 136 kugira ngo uvugane n’umujyanama wacu w’imirire cyangwa utegure uko wakwakira ibyo watumije ku buntu mu Rwanda hose.',
       btn:'Twandikire +250 788 877 136'
     },
     footer: {
-      copy:'Aho ibicuruzwa by’ukuri bya OQATA Wellness Solutions bitangirwa, mu Kigali no mu Rwanda.',
+      copy:'Ikigo gitanga serivisi z’imirire n’imitegurire y’indyo mu Rwanda, hamwe n’ibyongera by’imirire bigenewe kunganira ubujyanama bwihariye.',
       shop:'Ibicuruzwa',
       allProducts:'Ibicuruzwa byose',
       how:'Uburyo bwo gutumiza',
       why:'Kuki Elwell Hub',
       company:'Izi',
       contact:'Twandikire',
+      social:'Dukurikire',
       location:'Kigali, Rwanda',
       bottom1:'© 2026 Elwell Hub. Ihagarariye OQATA ku giti cye.',
       bottom2:'Ibicuruzwa bikozwe mu bufatanye na Earth\'s Creation USA.',
@@ -864,6 +892,7 @@ function applyLanguage(lang){
   document.getElementById('footer-why').textContent = translations[lang].footer.why;
   document.getElementById('footer-company').textContent = translations[lang].footer.company;
   document.getElementById('footer-contact').textContent = translations[lang].footer.contact;
+  document.getElementById('footer-social').textContent = translations[lang].footer.social;
   document.getElementById('footer-location').textContent = translations[lang].footer.location;
   document.getElementById('footer-bottom-1').textContent = translations[lang].footer.bottom1;
   document.getElementById('footer-bottom-2').textContent = translations[lang].footer.bottom2;
