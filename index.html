@@ -265,6 +265,10 @@
   .card .desc{font-size:13.5px;color:var(--muted);flex:1;}
   .card .more-info{display:none;font-size:13px;color:var(--muted);line-height:1.55;padding:10px 0 2px;border-top:1px solid var(--line);}
   .card .more-info.open{display:block;}
+  .card .more-info h4{font-size:13px;color:var(--navy);margin:0 0 6px;}
+  .card .more-info p{margin:0 0 12px;}
+  .card .more-info ul{margin:0 0 12px;padding-left:18px;}
+  .card .more-info li{margin-bottom:5px;}
   .card .details-btn{align-self:flex-start;border:0;background:none;padding:0;color:var(--blue);font:600 13px 'Inter',sans-serif;cursor:pointer;}
   .card .details-btn:hover{text-decoration:underline;}
   .card .row{display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
@@ -313,6 +317,30 @@
     padding:16px 20px;font-size:13px;font-weight:600;
     display:flex;gap:16px;flex-wrap:wrap;
   }
+
+  /* QUALITY PROMISE */
+  .quality-promise{
+    background:linear-gradient(135deg,#145E4A 0%,#0D483D 100%);
+    color:var(--white);
+  }
+  .quality-promise .section-head{max-width:760px;margin-left:auto;margin-right:auto;text-align:center;}
+  .quality-promise .kicker{color:#BFE5B0;}
+  .quality-promise .section-head h2{color:var(--white);}
+  .quality-promise .section-head p{color:#D8EEE0;}
+  .quality-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+  .quality-card{
+    display:flex;align-items:center;gap:24px;
+    min-height:176px;padding:24px 28px;
+    background:#EDF9E4;color:#145E4A;border-radius:20px;
+    box-shadow:0 12px 24px rgba(4,38,31,.14);
+  }
+  .quality-mark{
+    width:126px;height:126px;display:grid;place-items:center;flex:0 0 126px;
+    border-radius:50%;overflow:hidden;background:#F8FFF1;
+  }
+  .quality-mark img{width:100%;height:100%;object-fit:contain;}
+  .quality-card h3{font-size:17px;line-height:1.3;margin-bottom:9px;color:#145E4A;}
+  .quality-card p{font-size:14px;line-height:1.45;color:#246753;}
 
   /* CONTACT BANNER */
   .cta-band{
@@ -365,6 +393,7 @@
     .why{grid-template-columns:1fr;}
     .why-photo{height:280px;order:-1;}
     .steps{grid-template-columns:1fr;}
+    .quality-grid{grid-template-columns:1fr;}
     .foot-grid{grid-template-columns:1fr 1fr;}
     nav.links{display:none;}
     .burger{display:block;}
@@ -384,6 +413,10 @@
     .section-head p{font-size:15px;}
     .cta-band{padding:48px 16px;border-radius:16px;}
     .cta-band h2{font-size:25px;}
+    .quality-card{align-items:flex-start;gap:16px;padding:20px;}
+    .quality-mark{width:88px;height:88px;flex-basis:88px;}
+    .quality-card h3{font-size:15px;}
+    .quality-card p{font-size:13px;}
     .foot-grid{grid-template-columns:1fr;}
     .trust .wrap{justify-content:center;}
     .trust-item{font-size:13px;}
@@ -404,6 +437,7 @@
       <a id="nav-products" href="#products">Products</a>
       <a id="nav-how" href="#how">How to order</a>
       <a id="nav-why" href="#why">Why us</a>
+      <a id="nav-quality" href="#quality">Quality</a>
       <a id="nav-contact" href="#contact">Contact</a>
     </nav>
     <div class="language-switcher" aria-label="Language switcher">
@@ -536,6 +570,42 @@
     </a>
   </div>
 </section>
+
+<section id="quality" class="quality-promise">
+  <div class="wrap">
+    <div class="section-head">
+      <span id="quality-kicker" class="kicker">Our quality promise</span>
+      <h2 id="quality-title">Standards you can trust in every product.</h2>
+      <p id="quality-subtitle">Our partners follow recognized food-safety and manufacturing standards so every product is made, handled, and packaged with care.</p>
+    </div>
+    <div class="quality-grid">
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-fda.png" alt="FDA Registered logo"></div>
+        <div><h3 id="quality-1-title">FDA Registered</h3><p id="quality-1-text">Production facilities are registered with the U.S. Food &amp; Drug Administration and follow approved health and safety guidelines.</p></div>
+      </article>
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-iso-22000.png" alt="ISO 22000 Certified logo"></div>
+        <div><h3 id="quality-2-title">ISO 22000 Certified</h3><p id="quality-2-text">An international food-safety management standard covering the handling, processing, and packaging of ingredients.</p></div>
+      </article>
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-gmp.png" alt="GMP Certified logo"></div>
+        <div><h3 id="quality-3-title">GMP Certified</h3><p id="quality-3-text">Good Manufacturing Practice helps ensure a clean, controlled environment with consistent quality and potency.</p></div>
+      </article>
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-haccp.png" alt="HACCP Certified logo"></div>
+        <div><h3 id="quality-4-title">HACCP Certified</h3><p id="quality-4-text">A systematic approach that helps prevent contamination and protect consumer safety at every production stage.</p></div>
+      </article>
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-nsf.png" alt="NSF Certified logo"></div>
+        <div><h3 id="quality-5-title">NSF Certified</h3><p id="quality-5-text">Independent verification that products meet global standards for purity, strength, and accurate labeling.</p></div>
+      </article>
+      <article class="quality-card">
+        <div class="quality-mark"><img src="logo/quality-halal-kosher.png" alt="Halal and Kosher Certified logos"></div>
+        <div><h3 id="quality-6-title">Halal &amp; Kosher Certified</h3><p id="quality-6-text">Products meet ethical, clean, and faith-compliant manufacturing principles for customers worldwide.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
 </main>
 
 <footer>
@@ -602,7 +672,7 @@ const productsByLang = {
     {name:"Colon Detox", cat:"Digestive health", desc:"A gentle cleanse that supports gut comfort, digestive flow, and daily balance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
     {name:"Hair, Skin + Nails", cat:"Beauty", desc:"Supports hair strength, skin glow, and strong nails for everyday confidence.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
     {name:"Andro-T", cat:"Men's wellness", desc:"Improves libido, sexual performance, heart health, energy, stamina, testosterone, mood stability, and prostate support.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
-    {name:"Andro-Brew Cappuccino for Men", cat:"Men's wellness", desc:"A nourishing herbal coffee blend designed to support daily energy and endurance.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
+    {name:"Andro-Brew Cappuccino for Men", cat:"Men's wellness", desc:"A nourishing herbal coffee blend designed to support daily energy and endurance.", img:"logo/andro-brew-cappuccino.png"},
     {name:"Trimtone Enhancer", cat:"Weight support", desc:"Supports metabolism, appetite control, and a balanced daily routine.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
     {name:"Trimtone Tea", cat:"Weight support", desc:"A wellness tea blend to complement your routine and support healthy habits.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
     {name:"Muscle-Bone Care", cat:"Joint and bone health", desc:"Supports bone strength, circulation, and healthy movement for active days.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
@@ -620,7 +690,7 @@ const productsByLang = {
     {name:"Colon Detox", cat:"Ubuzima bw'amara", desc:"Uruvange rworoheje rufasha amara kugira ubuzima bwiza no gusya neza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0931-819x1024.jpg"},
     {name:"Hair, Skin + Nails", cat:"Ubwiza", desc:"Rufasha umusatsi gukomera, uruhu kuba rwiza n'inzara kugira ubuzima bwiza.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0920-819x1024.jpg"},
     {name:"Andro-T", cat:"Ubuzima bw'abagabo", desc:"Ifasha ubushake, imbaraga z'imibonano, ubuzima bw'umutima, imbaraga, testosterone, uburinganire bw'ubwenge, n'ubuzima bw'umwijima.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0925-819x1024.jpg"},
-    {name:"Andro-Brew Cappuccino for Men", cat:"Ubuzima bw'abagabo", desc:"Ikinyobwa cy'ibyatsi gikora neza hamwe na Andro-T mu gufasha abagabo kugira imbaraga buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0905-768x1024.jpg"},
+    {name:"Andro-Brew Cappuccino for Men", cat:"Ubuzima bw'abagabo", desc:"Ikinyobwa cy'ibyatsi gikora neza hamwe na Andro-T mu gufasha abagabo kugira imbaraga buri munsi.", img:"logo/andro-brew-cappuccino.png"},
     {name:"Trimtone Enhancer", cat:"Gucunga ibiro", desc:"Ifasha imikorere y'umubiri n'imicungire y'ibiro mu mibereho iboneye.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0924-819x1024.jpg"},
     {name:"Trimtone Tea", cat:"Gucunga ibiro", desc:"Icyayi cy'ibyatsi cyo kunywa buri munsi mu murongo wa Trimtone wo gucunga ibiro.", img:"https://oqatawellness.com/wp-content/uploads/2025/11/TRIMTONE-TEA-2.jpg"},
     {name:"Muscle-Bone Care", cat:"Ingingo n'amagufa", desc:"Ifasha amagufa gukomera, imitsi gukira no kugenda neza buri munsi.", img:"https://oqatawellness.com/wp-content/uploads/2026/01/IMG_0921-819x1024.jpg"},
@@ -633,74 +703,483 @@ const productsByLang = {
 
 const productDetails = {
   "Super Focus Gummies": {
-    en: "Contains herbs commonly used for memory, attention, and mental stamina. Some people use focus supplements when they feel mentally tired or distracted; effects vary and they are not a treatment for memory disorders.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Your brain supports thinking, memory, emotions, focus, movement, and everyday wellbeing.</strong> When it receives balanced nutrition, enough sleep, hydration, and regular movement, it can support learning, clear thinking, and steady mental performance.</p>
+      <p><strong>The danger?</strong> An unbalanced diet, excess screen time, stress, poor sleep, and environmental exposures may contribute to brain fog, reduced focus, forgetfulness, low energy, mood changes, and mental fatigue.</p>
+      <p><strong>Meet Super Focus Bacopa Gummies:</strong> Made with Bacopa Monnieri, Vitamin B Complex, Panax Ginseng, Vitamin C, Rhodiola Rosea, and Green Tea Extract. This formula is designed for children aged 4 and older and adults to complement healthy routines that support memory, attention, learning, calm focus, and mental energy.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Bacopa Monnieri (Brahmi)</strong> – Traditionally used to support memory, learning, focus, and stress resilience.</li>
+        <li><strong>Vitamin B Complex</strong> – Supports energy metabolism, nervous-system function, and normal neurotransmitter production.</li>
+        <li><strong>Panax Ginseng</strong> – Traditionally used to support mental stamina, energy, memory, and resilience.</li>
+        <li><strong>Vitamin C (Ascorbic Acid)</strong> – Provides antioxidant support and supports normal immune and nervous-system function.</li>
+        <li><strong>Rhodiola Rosea</strong> – Traditionally used to support alertness, fatigue management, mood, and stress resilience.</li>
+        <li><strong>Green Tea Extract with L-Theanine &amp; EGCG</strong> – Supports calm alertness and provides antioxidant support; caffeine content may vary.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Focus and concentration</strong> – Supports attention during school, work, and everyday tasks.</li>
+        <li><strong>Memory and learning</strong> – Supports normal recall, learning, and mental performance.</li>
+        <li><strong>Stress resilience</strong> – Complements healthy routines for calmness and emotional balance.</li>
+        <li><strong>Mental energy</strong> – Supports sustained energy and alertness without replacing sleep or nutritious meals.</li>
+        <li><strong>Brain fog and fatigue</strong> – Supports a clear, responsive mind when combined with rest and hydration.</li>
+        <li><strong>Cognitive resilience</strong> – Provides nutrients and botanicals with antioxidant support for overall brain wellness.</li>
+        <li><strong>Mood and sleep balance</strong> – Supports normal nervous-system function and healthy daily rhythms.</li>
+      </ul>
+      <p><strong>Important:</strong> Super Focus is not a treatment for ADHD, anxiety, depression, memory disorders, or other medical conditions. Follow the age and serving directions, check the caffeine content, and ask a pediatric or healthcare professional before giving it to a child or using it with medicines. Do not use it to replace prescribed treatment, sleep, balanced meals, or professional evaluation of persistent concentration or mood concerns.</p>`,
     rw: "Harimo ibyatsi bikunze gukoreshwa mu gufasha kwibuka, kwibanda no kugira imbaraga mu bitekerezo. Bamwe babikoresha iyo bumva bananiwe mu mutwe; ingaruka zirahinduka kandi ntabwo bivura indwara zo kwibuka."
   },
   "Resveratrol": {
-    en: "Resveratrol is an antioxidant compound studied for cellular protection and healthy aging. It may support normal inflammation and circulation, but it should not replace prescribed care or a balanced diet.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Healthy cells are the foundation of energy, repair, immunity, and overall vitality.</strong> Supporting cellular health through balanced nutrition, movement, quality sleep, and healthy lifestyle choices can help the body function at its best.</p>
+      <p><strong>The danger?</strong> Pollution, stress, smoking, alcohol, highly processed foods, excess sugar, and UV exposure can contribute to oxidative stress, in which unstable molecules challenge the body’s natural protective systems.</p>
+      <p><strong>Meet Resveratrol:</strong> A polyphenol antioxidant sourced from red grape skins, Japanese knotweed, and non-alcoholic red wine extracts. It is designed to support antioxidant protection, normal circulation, healthy aging, cellular wellness, and overall vitality.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Japanese Knotweed</strong> – A concentrated source of resveratrol traditionally studied for antioxidant and cardiovascular support.</li>
+        <li><strong>Grape Skin Extract</strong> – Provides resveratrol, flavonoids, and anthocyanins for antioxidant and healthy-aging support.</li>
+        <li><strong>Non-Alcoholic Red Wine Extract &amp; Concentrated Red Wine Powder</strong> – Provide polyphenols and antioxidants without the alcohol content of regular wine.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Cellular antioxidant support</strong> – Helps support the body’s defenses against everyday oxidative stress.</li>
+        <li><strong>Healthy aging</strong> – Complements nutrition and lifestyle habits that support long-term cellular wellness.</li>
+        <li><strong>Heart and circulation wellness</strong> – Supports normal blood-vessel and cardiovascular function.</li>
+        <li><strong>Brain and cognitive wellness</strong> – Supports normal circulation and overall brain health.</li>
+        <li><strong>Metabolic wellness</strong> – Complements balanced nutrition and movement for normal energy and metabolic function.</li>
+        <li><strong>Immune resilience</strong> – Provides antioxidant support as part of a healthy lifestyle.</li>
+        <li><strong>Skin wellness</strong> – Supports protection from oxidative stress that can affect healthy-looking skin.</li>
+      </ul>
+      <p><strong>Important:</strong> Resveratrol is not a treatment for heart disease, diabetes, cancer, memory loss, high blood pressure, or other medical conditions. Ask a healthcare professional before use if you take blood thinners, blood-pressure or diabetes medicines, are pregnant or breastfeeding, or have surgery planned. It should complement—not replace—prescribed care, a balanced diet, sun protection, and healthy lifestyle habits.</p>`,
     rw: "Resveratrol ni ikinyabutabire kirinda uturemangingo kandi kigakorerwa ubushakashatsi ku gusaza neza. Gishobora gufasha umubiri, ariko ntigisimbura imiti cyangwa indyo yuzuye."
   },
   "GlucoBalance+": {
-    en: "GlucoBalance+ is designed to support healthy glucose metabolism, insulin function, carbohydrate processing, and steady daily energy. It combines berberine, gymnema, bitter melon, alpha lipoic acid, chromium, magnesium, and banaba leaf to complement balanced eating, regular movement, and appropriate medical care.",
+    en: `<h4>Product Description</h4>
+      <p>Meals are converted into glucose, an important source of energy. The body carefully regulates glucose in the bloodstream so cells can use it effectively. When glucose balance is disrupted, it may affect energy, concentration, appetite, and long-term metabolic wellness.</p>
+      <p><strong>OQATA GlucoBalance+</strong>, manufactured in the USA, is a daily nutritional formula designed to support healthy glucose metabolism, insulin function, carbohydrate processing, and steady energy. It combines botanical extracts, minerals, and antioxidants to complement balanced eating, regular physical activity, adequate sleep, hydration, and appropriate medical care.</p>
+      <h4>Why You’ll Love It</h4>
+      <ul>
+        <li>Supports healthy glucose metabolism and insulin function.</li>
+        <li>Supports carbohydrate processing and steady daily energy.</li>
+        <li>Complements healthy appetite and weight-management routines.</li>
+        <li>Provides antioxidant and cellular-energy support.</li>
+      </ul>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Berberine HCl</strong> – Supports glucose metabolism, insulin function, metabolic balance, and cellular energy.</li>
+        <li><strong>Gymnema Sylvestre</strong> – Traditionally used to support glucose metabolism, insulin activity, and appetite awareness.</li>
+        <li><strong>Bitter Melon Extract</strong> – Supports carbohydrate metabolism and healthy glucose balance.</li>
+        <li><strong>Alpha Lipoic Acid</strong> – Provides antioxidant support and supports glucose metabolism and cellular energy production.</li>
+        <li><strong>Chromium Picolinate</strong> – Supports normal insulin function and glucose utilization.</li>
+        <li><strong>Magnesium</strong> – Supports muscle and nerve function, energy production, and glucose metabolism.</li>
+        <li><strong>Banaba Leaf Extract</strong> – Traditionally used to support glucose metabolism and metabolic wellness.</li>
+      </ul>
+      <h4>What It Supports</h4>
+      <ul>
+        <li><strong>Glucose metabolism</strong> – Supports the body’s normal processing and use of glucose.</li>
+        <li><strong>Insulin function</strong> – Complements nutrition and movement that support normal insulin activity.</li>
+        <li><strong>Carbohydrate metabolism</strong> – Supports normal processing of carbohydrates and steady energy.</li>
+        <li><strong>Energy and antioxidant protection</strong> – Supports cellular energy, muscle and nerve function, and antioxidant defenses.</li>
+        <li><strong>Healthy lifestyle goals</strong> – Works best with balanced meals, regular exercise, hydration, sleep, and use as directed.</li>
+      </ul>
+      <p><strong>Important:</strong> GlucoBalance+ is not a treatment or cure for diabetes, prediabetes, hypoglycemia, or other metabolic conditions. If you have diabetes, continue prescribed medication and follow your healthcare professional’s monitoring plan. Ask a clinician before use if you take insulin or other glucose-lowering, blood-pressure, blood-thinning, or diabetes medicines, are pregnant or breastfeeding, or have kidney or liver disease. Monitor for low blood sugar symptoms and stop use for concerning reactions.</p>`,
     rw: "GlucoBalance+ igenewe gufasha imikorere ya glucose, imikorere ya insulin, gutunganya carbohydrate, n'imbaraga za buri munsi. Ikarimo berberine, gymnema, bitter melon, alpha lipoic acid, chromium, magnesium, na banaba leaf, kugira ngo ijyanye n'indyo iboneye, imyitozo isanzwe, kandi ubujyanama bw'umuganga."
   },
   "Liver Care": {
-    en: "Ingredients are traditionally used to support normal liver function and digestion. It does not detox the body from alcohol, medicines, or poisoning; seek medical help for yellow eyes, severe pain, or persistent nausea.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Your liver is central to the body’s natural processing and clearance systems.</strong> It processes nutrients, helps break down fats, supports hormone metabolism, and contributes to normal immune function and energy.</p>
+      <p><strong>The danger?</strong> Alcohol, an unbalanced diet, excess sugar, some medicines, pollution, and other exposures can place strain on liver health. This may be associated with fatigue, digestive discomfort, bloating, changes in skin, and metabolic concerns.</p>
+      <p><strong>Meet Liver Care with CurQLife:</strong> Formulated with CurQLife® turmeric extract, Milk Thistle, Anamu, Dandelion, Artichoke, and Beetroot. This blend is designed to support normal liver function, antioxidant protection, bile and digestive function, and overall vitality. It complements balanced nutrition, healthy movement, and appropriate medical care.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>CurQLife® (Turmeric Root Extract)</strong> – Provides antioxidant support and supports a healthy inflammatory response and normal digestive function.</li>
+        <li><strong>Milk Thistle (Silymarin)</strong> – Traditionally used to support liver-cell protection and normal liver function.</li>
+        <li><strong>Anamu</strong> – Traditionally used in herbal wellness practices to support antioxidant and immune function.</li>
+        <li><strong>Dandelion</strong> – Traditionally used to support bile flow, digestion, and healthy fluid balance.</li>
+        <li><strong>Artichoke Extract</strong> – Supports digestion, bile function, and healthy cholesterol metabolism.</li>
+        <li><strong>Beetroot</strong> – Provides antioxidant support and supports normal circulation and digestive function.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Liver wellness</strong> – Supports normal liver function and the body’s natural processing systems.</li>
+        <li><strong>Antioxidant support</strong> – Helps support protection from everyday oxidative stress.</li>
+        <li><strong>Digestive health</strong> – Supports bile function, fat digestion, and everyday digestive comfort.</li>
+        <li><strong>Metabolic balance</strong> – Complements healthy nutrition and movement for normal fat, glucose, and cholesterol metabolism.</li>
+        <li><strong>Skin and energy wellness</strong> – Supports overall vitality and healthy-looking skin through general nutritional support.</li>
+        <li><strong>Immune wellness</strong> – Supports normal immune function as part of a healthy lifestyle.</li>
+        <li><strong>Long-term liver care</strong> – Complements reduced alcohol intake, balanced meals, regular activity, and medical monitoring when needed.</li>
+      </ul>
+      <p><strong>Important:</strong> Liver Care cannot cleanse alcohol, heavy metals, medicines, or poisons from the body and is not a treatment for fatty liver disease, hepatitis, cirrhosis, or other liver conditions. Ask a healthcare professional before use, especially if you have liver or gallbladder disease, are pregnant, or take prescription medicines. Seek urgent medical advice for yellow eyes or skin, dark urine, severe abdominal pain, vomiting, confusion, or persistent nausea.</p>`,
     rw: "Ibiyigize bikunze gukoreshwa mu gufasha imikorere isanzwe y'umwijima no gusya. Ntabwo ikuramo uburozi, inzoga cyangwa imiti mu mubiri; saba ubufasha bw'umuganga iyo amaso abaye umuhondo cyangwa ufite ububabare bukomeye."
   },
   "Super Omega-3": {
-    en: "Omega-3 fats help support normal heart, brain, and eye function. They may be useful when dietary fish intake is low; ask a clinician before use if you take blood thinners.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Your heart continuously circulates oxygen and nutrients throughout the body.</strong> Supporting heart, brain, eye, joint, and skin health through balanced nutrition, regular activity, and healthy lifestyle habits helps the body function well.</p>
+      <p><strong>The danger?</strong> Low intake of oily fish, highly processed foods, excess refined carbohydrates, stress, alcohol, smoking, and inactivity may affect cardiovascular health, circulation, inflammation, and overall wellbeing.</p>
+      <p><strong>Meet Super Omega-3:</strong> A molecularly distilled fish-oil formula enriched with EPA, DHA, Vitamin E, and ALA. It is designed to complement a balanced diet and support normal cardiovascular, brain, eye, joint, skin, and immune function.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Fish Oil (1000 mg)</strong> – Provides omega-3 fatty acids, including EPA and DHA, to support heart, brain, eye, skin, and joint wellness.</li>
+        <li><strong>EPA (Eicosapentaenoic Acid, 200 mg)</strong> – Supports cardiovascular health, normal inflammatory balance, circulation, and joint comfort.</li>
+        <li><strong>DHA (Docosahexaenoic Acid, 500 mg)</strong> – Supports brain and eye structure and normal cognitive and visual function.</li>
+        <li><strong>Vitamin E</strong> – Provides antioxidant support for cells, skin, immune function, and the oils in the formula.</li>
+        <li><strong>ALA (Alpha-Linolenic Acid, 200 mg)</strong> – An essential plant-based omega-3 that supports normal heart, circulation, skin, and metabolic wellness.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Heart and circulation wellness</strong> – Supports normal cardiovascular function and healthy triglyceride levels as part of a balanced lifestyle.</li>
+        <li><strong>Brain and memory support</strong> – Provides DHA for normal brain structure and cognitive function.</li>
+        <li><strong>Joint and muscle comfort</strong> – Supports a healthy inflammatory response and everyday mobility.</li>
+        <li><strong>Skin, hair, and eye wellness</strong> – Supports healthy skin moisture, cell membranes, and normal visual function.</li>
+        <li><strong>Immune wellness</strong> – Supports normal immune function and inflammatory balance.</li>
+        <li><strong>Pregnancy and child development</strong> – DHA supports fetal and child brain and eye development; use only with guidance from a qualified healthcare professional.</li>
+      </ul>
+      <p><strong>Important:</strong> Super Omega-3 is not a treatment for heart disease, high cholesterol, high blood pressure, arthritis, depression, vision disease, or other medical conditions. Do not use if allergic to fish or seafood. Ask a healthcare professional before use if you take anticoagulants or antiplatelet medicines, have a bleeding disorder, are pregnant or breastfeeding, or have surgery planned. Follow the serving instructions and choose a product tested for purity.</p>`,
     rw: "Amavuta ya Omega-3 afasha umutima, ubwonko n'amaso gukora neza. Ashobora gufasha abataronka amafi ahagije; baza umuganga niba ukoresha imiti igabanya amaraso."
   },
   "Colon Detox": {
-    en: "Fiber and cleansing herbs may support regular bowel movements and temporary bloating or sluggish digestion. Drink enough water, and stop use for severe cramps, bleeding, or ongoing constipation.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Your colon is your body’s “final filter.”</strong> It moves out waste, balances fluids, hosts trillions of friendly microbes, and helps your body absorb nutrients that power energy, focus, skin clarity, and immunity.</p>
+      <p><strong>The danger?</strong> Modern living can put extra strain on the gut. Processed foods, excess sugar, fried meals, stress, medications, and long hours of sitting may contribute to bloating, constipation, brain fog, fatigue, skin breakouts, and discomfort.</p>
+      <p><strong>Meet Colon Detox:</strong> A plant-powered blend made in the USA by Earth’s Creation. It combines soluble and insoluble fibers with botanicals and probiotics to support comfortable regularity, a balanced gut flora, and nutrient absorption. With Colon Detox, you can support a lighter, more energized feeling and get more from every meal.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Cascara Sagrada</strong> – Traditionally used as a natural laxative to support bowel regularity.</li>
+        <li><strong>Oat Straw</strong> – A source of fiber that supports regularity and healthy gut bacteria.</li>
+        <li><strong>Alfalfa</strong> – Supports digestion and provides vitamins and minerals.</li>
+        <li><strong>Fennel</strong> – Helps ease gas, bloating, and digestive discomfort.</li>
+        <li><strong>Psyllium Husk</strong> – Soluble fiber that supports smooth, regular bowel movements.</li>
+        <li><strong>Horsetail</strong> – Provides minerals and supports the body’s natural cleansing processes.</li>
+        <li><strong>Dandelion Root</strong> – Traditionally used to support liver and digestive function.</li>
+        <li><strong>Parsley</strong> – Supports digestion and healthy fluid balance.</li>
+        <li><strong>Burdock</strong> – Traditionally used to support skin and digestive wellness.</li>
+        <li><strong>Aloe Ferox</strong> – Supports bowel regularity.</li>
+        <li><strong>Siberian Ginseng</strong> – Supports vitality, immunity, and overall wellbeing.</li>
+        <li><strong>Bentonite</strong> – Helps bind impurities in the digestive system.</li>
+        <li><strong>Cayenne</strong> – Supports circulation, metabolism, and digestive function.</li>
+        <li><strong>Probiotic 6 (Bacillus coagulans)</strong> – Supports gut flora balance and digestion.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li>Supports the removal of waste from the gut and a refreshed feeling.</li>
+        <li>Supports digestion, metabolism, and everyday comfort.</li>
+        <li>Supports a healthy weight-management routine alongside balanced nutrition and movement.</li>
+        <li>Helps replenish beneficial bacteria and support nutrient absorption.</li>
+        <li>Helps reduce occasional bloating and gas.</li>
+        <li>Supports regular bowel movements and digestive comfort.</li>
+        <li>Supports normal immune function.</li>
+        <li>Supports normal liver and digestive function.</li>
+        <li>Supports clearer, healthier-looking skin through digestive wellness.</li>
+        <li>Supports freshness by promoting digestive balance.</li>
+        <li>Supports nutrient absorption from a balanced diet.</li>
+      </ul>
+      <p><strong>Important:</strong> Drink enough water and use only as directed. Stop use and seek medical advice for severe cramps, bleeding, persistent constipation, or other concerning symptoms.</p>`,
     rw: "Utwunyangingo n'ibyatsi bishobora gufasha amara gukora neza no kugabanya kubyimba by'igihe gito. Nywa amazi ahagije, kandi uhagarike niba ufite ibinya bikomeye, amaraso cyangwa impatwe idakira."
   },
   "Hair, Skin + Nails": {
-    en: "Nutrients such as biotin and minerals support normal keratin formation for hair, skin, and nails. Changes take time, and sudden hair loss or skin changes deserve professional evaluation.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Your hair, skin, and nails can reflect your overall health.</strong> When the body lacks essential nutrients, hair may become thin or break, skin may look dull, and nails may become brittle or weak.</p>
+      <p><strong>The danger?</strong> Stress, an unbalanced diet, environmental exposure, harsh products, and nutrient deficiencies may affect the normal growth and appearance of hair, skin, and nails.</p>
+      <p><strong>Hair, Skin + Nails Formula</strong> is a beauty supplement designed to nourish from within. It combines biotin, vitamins, minerals, and botanical ingredients to support normal collagen, keratin, skin barrier, and hair-growth processes. This blend supports stronger-looking hair, brighter and more hydrated-looking skin, and resilient nails.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Biotin (Vitamin B7)</strong> – Supports normal keratin production for hair and nails.</li>
+        <li><strong>Vitamin E</strong> – Provides antioxidant support for skin, scalp, and nails.</li>
+        <li><strong>Vitamin C</strong> – Supports normal collagen formation and antioxidant protection.</li>
+        <li><strong>Vitamin D</strong> – Supports normal immune function, skin health, and hair-follicle activity.</li>
+        <li><strong>Zinc</strong> – Supports normal skin maintenance, healing, and hair health.</li>
+        <li><strong>Turmeric (Curcumin)</strong> – Provides antioxidant support and supports a healthy inflammatory response.</li>
+        <li><strong>Keratin</strong> – Supplies a structural protein associated with hair and nail strength.</li>
+        <li><strong>Saw Palmetto</strong> – Traditionally used to support hair and hormonal wellness; evidence and results vary.</li>
+        <li><strong>MSM &amp; Silica</strong> – Support connective tissue, collagen, and nail strength.</li>
+        <li><strong>Ginkgo Biloba</strong> – Provides antioxidant support and supports healthy circulation.</li>
+        <li><strong>Horsetail</strong> – A source of silica traditionally used to support hair and nail strength.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Hair health</strong> – Supports normal hair strength, shine, and growth cycles.</li>
+        <li><strong>Skin health</strong> – Supports hydration, elasticity, collagen formation, and a healthy-looking complexion.</li>
+        <li><strong>Nail health</strong> – Supports stronger nails and helps maintain normal nail growth.</li>
+        <li><strong>Healthy aging</strong> – Provides antioxidant and collagen support for skin elasticity.</li>
+        <li><strong>Hair and hormonal wellness</strong> – Supports normal hormone-related processes associated with hair health.</li>
+        <li><strong>Overall wellness</strong> – Supports normal antioxidant protection, nutrient status, and immune function.</li>
+      </ul>
+      <p><strong>Important:</strong> Results vary and nutritional supplements cannot prevent or treat every cause of hair loss, acne, wrinkles, or nail changes. Ask a healthcare professional before use, especially if pregnant, taking medicines, or managing a hormone-related condition. Seek medical advice for sudden hair loss, persistent rash, severe acne, or major nail changes.</p>`,
     rw: "Intungamubiri nka biotin n'imyunyu ngugu zifasha umubiri gukora keratin y'umusatsi, uruhu n'inzara. Impinduka zisaba igihe; umusatsi ugwa gitunguranye cyangwa uruhu ruhinduka bisaba umuganga."
   },
   "Andro-T": {
-    en: "<br>* Improves libido, sexual performance and heart health.<br>* Boosts energy and stamina levels for peak sexual performance.<br>* NATURALLY BOOSTS LEVELS OF TESTOSTERONE SEX HORMONE.<br>* Enhances mood stability and cardiovascular health.<br>* Promotes muscle growth, endurance and workout recovery.<br>* Eliminates impotence, weak erection, premature ejaculation and other sexual dysfunction.<br>* Reduces cortisol (stress hormone levels) and enhances mood stability.<br>* Protects and treats prostate enlargement and urinary dysfunction.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Testosterone is an important hormone for men’s health and vitality.</strong> It supports muscle function, stamina, mental focus, libido, reproductive health, and overall wellbeing.</p>
+      <p><strong>The danger?</strong> Testosterone levels can change with age, stress, poor sleep, limited exercise, alcohol use, and an unbalanced diet. These factors may be associated with fatigue, changes in body composition, reduced muscle mass, low libido, brain fog, and slower recovery.</p>
+      <p><strong>Meet Andro-T:</strong> Made in the USA, Andro-T combines Fenugreek, Tribulus Terrestris, Ashwagandha, Maca Root, vitamins, and minerals to support the body’s normal energy, vitality, and hormone-related functions. It is designed to complement healthy nutrition, regular movement, quality sleep, and professional care when needed.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Fenugreek</strong> – Traditionally used to support libido, vitality, and healthy blood sugar metabolism.</li>
+        <li><strong>Tribulus Terrestris</strong> – Traditionally used to support libido, circulation, and reproductive wellness.</li>
+        <li><strong>Ashwagandha</strong> – Supports stress management, restful sleep, focus, and physical endurance.</li>
+        <li><strong>Maca Root</strong> – Traditionally used to support libido, stamina, mood, and daily energy.</li>
+        <li><strong>Zinc &amp; Boron</strong> – Essential minerals that support normal hormone function and reproductive health.</li>
+        <li><strong>Vitamin B6, B12 &amp; Niacin (B3)</strong> – Support energy metabolism, red blood cell production, and nervous system function.</li>
+        <li><strong>L-Arginine &amp; L-Citrulline</strong> – Support healthy blood flow and exercise performance.</li>
+        <li><strong>L-Carnitine</strong> – Supports energy production, fat metabolism, and workout recovery.</li>
+      </ul>
+      <h4>What It Supports</h4>
+      <ul>
+        <li><strong>Hormone and vitality support</strong> – Supports normal hormone-related functions, energy, and strength.</li>
+        <li><strong>Muscle function and recovery</strong> – Complements resistance training, movement, and post-workout recovery.</li>
+        <li><strong>Sexual and reproductive wellness</strong> – Supports libido, stamina, circulation, and reproductive health.</li>
+        <li><strong>Energy and metabolism</strong> – Supports daily stamina and normal energy metabolism.</li>
+        <li><strong>Stress and mental clarity</strong> – Supports focus, stress resilience, and restful sleep.</li>
+        <li><strong>Cardiovascular wellness</strong> – Supports healthy circulation as part of an active lifestyle.</li>
+        <li><strong>Men’s overall wellbeing</strong> – Complements a balanced diet, regular exercise, and healthy lifestyle habits.</li>
+      </ul>
+      <p><strong>Important:</strong> Andro-T is not a treatment for low testosterone, erectile dysfunction, infertility, prostate enlargement, or any other medical condition. Ask a healthcare professional before use, especially if you take hormone, blood pressure, diabetes, heart, or blood-thinning medicines. Seek medical advice for persistent fatigue, sexual difficulties, urinary symptoms, or other concerns.</p>`,
     rw: "<br>* Ifasha ubushake, imikorere y'imibonano n'ubuzima bw'umutima.<br>* Iongera imbaraga n'ubushobozi bwo gukora bya max ku myitwarire y'imibonano.<br>* KONGERA TESTOSTERONE KU MURIYO Y'IMISSEMBURO Y'IMIBONANO.<br>* Itonya uburenganzira bwo kugumana umubare w'ubwenge no kubaho neza ku mutima.<br>* Ifasha imitsi gukura, gukomera no gukira nyuma yo gukora siporo.<br>* Ikuraho kudashobora gushaka igitsina, kudakomera, gusohora byihuse n'ibindi bibazo by'imibonano.<br>* Igabanya cortisol (imikorere y'ubwoba) kandi ikongera umubare w'ubwenge.<br>* Irinda kandi ivura kwaguka kw'umutwe w'intanga n'ibibazo by'inzoka." 
   },
   "Andro-Brew Cappuccino for Men": {
-    en: "An herbal coffee-style drink intended to support daily energy and endurance. Check the caffeine content and avoid excess use if you are sensitive to caffeine, pregnant, or have uncontrolled blood pressure.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Male sexual wellness is connected to energy, circulation, stress, sleep, and overall health.</strong> Healthy lifestyle habits can support libido, stamina, confidence, and intimate wellbeing.</p>
+      <p><strong>The danger?</strong> Age, stress, long work hours, alcohol, poor nutrition, limited sleep, and inactivity may contribute to fatigue, reduced desire, and changes in sexual performance. Persistent symptoms can also signal a medical condition and deserve professional evaluation.</p>
+      <p><strong>Meet Andro-Brew Cappuccino:</strong> A cappuccino-style drink blended with male-vitality botanicals and coffee ingredients. It is designed to support daily energy, stamina, circulation, and men’s wellness as part of a healthy routine.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Tongkat Ali (Malaysian Ginseng)</strong> – Traditionally used to support male vitality, energy, and libido; results vary.</li>
+        <li><strong>Maca Root</strong> – Traditionally used to support stamina, mood, energy, and sexual wellness.</li>
+        <li><strong>Ginseng Extract</strong> – Traditionally used to support energy, endurance, stress resilience, and circulation.</li>
+        <li><strong>Epimedium (Horny Goat Weed)</strong> – Traditionally used to support libido and circulation; evidence and response vary.</li>
+        <li><strong>Silica</strong> – Supports connective-tissue and general nutritional wellness.</li>
+        <li><strong>Cappuccino Powder, Plant-Based Fats &amp; Natural Glucose</strong> – Provide the drink’s flavor, texture, and carbohydrate energy.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Daily energy</strong> – Supports alertness and stamina; caffeine content may vary by serving.</li>
+        <li><strong>Men’s vitality</strong> – Complements nutrition, sleep, exercise, and stress management that support libido and wellbeing.</li>
+        <li><strong>Circulation and performance</strong> – Supports normal blood flow and physical endurance.</li>
+        <li><strong>Stress and fatigue resilience</strong> – Supports energy and daily performance as part of a balanced routine.</li>
+        <li><strong>Reproductive wellness</strong> – Provides botanical support for general male wellness; it is not a fertility treatment.</li>
+      </ul>
+      <h4>How to Use</h4>
+      <p>Mix one sachet with hot water, stir, and enjoy. Follow the package directions and do not exceed the recommended serving. Do not rely on it as a treatment or use extra servings before intimacy.</p>
+      <p><strong>Important:</strong> Andro-Brew is not a treatment for erectile dysfunction, low testosterone, infertility, prostate disease, or other medical conditions. Check the caffeine content and ask a healthcare professional before use if you have heart disease, high blood pressure, diabetes, liver or kidney disease, take prescription medicines, or are sensitive to caffeine. Avoid use if pregnant or breastfeeding. Seek medical care for sudden erectile changes, chest pain, severe headache, or other concerning symptoms.</p>`,
     rw: "Ni ikinyobwa cy'ibyatsi gisa n'ikawa kigenewe gufasha imbaraga za buri munsi. Reba caffeine irimo kandi wirinde kuyinywa cyane niba ikugiraho ingaruka cyangwa ufite umuvuduko w'amaraso utagenzurwa."
   },
   "Trimtone Enhancer": {
-    en: "Weight-support ingredients may complement a calorie-aware diet and regular movement. It cannot replace nutrition or treat obesity; stop if you notice palpitations, dizziness, or unusual anxiety.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Metabolism helps convert food into energy and supports appetite, blood sugar, and healthy weight regulation.</strong> Balanced nutrition, regular movement, quality sleep, and adequate hydration all contribute to healthy metabolic function.</p>
+      <p><strong>The danger?</strong> Highly processed foods, excess sugar, chronic stress, poor sleep, and a sedentary lifestyle may contribute to low energy, cravings, digestive discomfort, and difficulty managing weight. Health conditions such as PCOS or thyroid disorders also require professional care.</p>
+      <p><strong>Meet Trimtone Enhancer:</strong> A plant-based blend designed to complement a balanced, calorie-aware eating pattern and regular movement. Its ingredients support normal energy metabolism, appetite awareness, digestion, and healthy blood sugar already within a healthy lifestyle.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Chromium</strong> – Supports normal macronutrient and blood sugar metabolism.</li>
+        <li><strong>Garcinia Cambogia</strong> – Traditionally used for appetite and weight-management support; results vary.</li>
+        <li><strong>Green Tea Extract</strong> – Provides antioxidant support and may support alertness and energy metabolism; caffeine content may vary.</li>
+        <li><strong>Bitter Melon Extract</strong> – Traditionally used to support glucose metabolism and digestive wellness.</li>
+        <li><strong>Psyllium Husk</strong> – Soluble fiber that supports fullness, bowel regularity, and digestive comfort.</li>
+        <li><strong>Green Coffee Bean Extract</strong> – Provides chlorogenic acids and may support energy metabolism; caffeine content may vary.</li>
+        <li><strong>Fenugreek Extract</strong> – Traditionally used to support digestion, appetite, and healthy blood sugar metabolism.</li>
+        <li><strong>Glucomannan</strong> – A water-soluble fiber that supports fullness and regular bowel movements when taken with enough water.</li>
+        <li><strong>Mulberry Extract</strong> – Traditionally used to support healthy glucose metabolism.</li>
+        <li><strong>Vitamin B6 &amp; B12</strong> – Support energy metabolism, nervous-system function, and normal red blood cell formation.</li>
+        <li><strong>Gymnema Sylvestre</strong> – Traditionally used to support healthy blood sugar and appetite awareness.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Energy metabolism</strong> – Supports the body’s normal use of nutrients for energy.</li>
+        <li><strong>Appetite awareness</strong> – Fiber ingredients support fullness as part of mindful eating.</li>
+        <li><strong>Blood sugar wellness</strong> – Complements balanced meals and regular movement that support normal glucose metabolism.</li>
+        <li><strong>Energy and focus</strong> – Supports daily alertness and energy; stimulant effects depend on the formula and serving.</li>
+        <li><strong>Digestive health</strong> – Supports bowel regularity, fullness, and everyday digestive comfort.</li>
+        <li><strong>Healthy weight management</strong> – Complements sustainable nutrition, activity, sleep, and behavior changes.</li>
+      </ul>
+      <p><strong>Important:</strong> Trimtone Enhancer is not a fat-burning guarantee or a treatment for obesity, diabetes, PCOS, thyroid disorders, or other medical conditions. Take fiber products with plenty of water. Ask a healthcare professional before use if you are pregnant or breastfeeding, have diabetes, high blood pressure, heart or thyroid disease, or take prescription medicines. Stop use for palpitations, severe dizziness, allergic symptoms, or unusual anxiety.</p>`,
     rw: "Ibiyigize bishobora gufasha gahunda yo kugenzura ibiro hamwe n'indyo iboneye no gukora siporo. Ntabwo isimbura indyo cyangwa kuvura umubyibuho; uhagarike niba umutima utera cyane, uzungera cyangwa ugira ubwoba budasanzwe."
   },
   "Trimtone Tea": {
-    en: "A herbal tea for hydration and a daily healthy routine. Some cleansing herbs can loosen stools or interact with medicines, so use only as directed and do not rely on it for rapid weight loss.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Metabolism converts food into energy and works alongside digestion, movement, sleep, and appetite regulation.</strong> Balanced meals, hydration, and regular activity are the foundation of healthy weight management.</p>
+      <p><strong>Meet Trimtone Tea:</strong> A refreshing lemon-flavored herbal tea crafted with green tea, citrus botanicals, and traditional digestive herbs. It is designed to complement a healthy routine by supporting hydration, digestion, regularity, and everyday energy.</p>
+      <h4>What Trimtone Tea Supports</h4>
+      <ul>
+        <li>Supports a refreshed, lighter feeling through hydration and digestive comfort.</li>
+        <li>Supports normal energy metabolism and alertness when the blend contains caffeine.</li>
+        <li>Supports digestion and regular bowel movements when used as directed.</li>
+        <li>Complements balanced nutrition and movement for sustainable weight management.</li>
+      </ul>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Green Tea</strong> – Provides catechins and antioxidant support; caffeine may support alertness and energy metabolism.</li>
+        <li><strong>Tangerine Peel</strong> – Traditionally used to support digestion and help ease occasional bloating.</li>
+        <li><strong>Stevia</strong> – A plant-based sweetener that provides sweetness without added sugar.</li>
+        <li><strong>Lemon</strong> – Adds refreshing citrus flavor and supports fluid intake.</li>
+        <li><strong>Garcinia Cambogia</strong> – Traditionally used for appetite and weight-management support; results vary.</li>
+        <li><strong>Lotus Leaf</strong> – Traditionally used to support digestion and healthy weight routines.</li>
+        <li><strong>Senna Leaf</strong> – A stimulant laxative herb that supports short-term bowel regularity; it is not for daily long-term use.</li>
+        <li><strong>Cassia Seed</strong> – Traditionally used to support digestion and bowel regularity.</li>
+      </ul>
+      <h4>Directions for Use</h4>
+      <p>Dissolve one sachet of Trimtone Tea Lemon Flavor in 150 ml of hot water, stir well, and sip slowly. For iced tea, dissolve it in a small amount of hot water, pour over ice, and enjoy chilled. Follow the package directions and do not exceed the recommended serving.</p>
+      <p><strong>Important:</strong> Trimtone Tea is not a detox treatment, fat-burning guarantee, or treatment for obesity, fatty liver disease, hepatitis, cirrhosis, diabetes, or other medical conditions. Senna may cause cramping, diarrhea, dehydration, and electrolyte imbalance and should not be used long term without medical advice. Ask a healthcare professional before use if pregnant or breastfeeding, under 18, dehydrated, living with bowel, kidney, heart, or liver disease, or taking diuretics, heart medicines, blood-pressure medicines, blood thinners, or other prescriptions. Stop use for severe cramps, persistent diarrhea, rectal bleeding, or allergic symptoms.</p>`,
     rw: "Ni icyayi cy'ibyatsi gifasha kunywa amazi no kugira gahunda nziza ya buri munsi. Ibyatsi bimwe bishobora gutera impiswi cyangwa gukorana nabi n'imiti; koresha uko byateganyijwe kandi ntukiringire kugabanya ibiro vuba."
   },
   "Muscle-Bone Care": {
-    en: "Minerals and supportive nutrients help maintain normal bones and muscle function. It may complement strength exercise and a balanced diet; new severe bone or muscle pain needs medical advice.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Muscles and bones form the foundation of movement, balance, posture, and everyday independence.</strong> Muscles power activity and recovery, while bones provide structure, protect vital organs, and store minerals such as calcium and magnesium.</p>
+      <p><strong>The danger?</strong> Aging, inactivity, poor nutrition, low vitamin D or calcium intake, hormonal changes, stress, alcohol, and excess soft drinks may affect muscle strength, bone mineral status, flexibility, and mobility over time.</p>
+      <p><strong>Meet Muscle-Bone Care:</strong> A supplement combining vitamins, minerals, and amino acids to support normal bone, muscle, nerve, connective-tissue, and joint function. It complements a balanced diet, resistance exercise, weight-bearing movement, healthy sleep, and professional care when needed.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Magnesium</strong> – Supports normal muscle contraction and relaxation, nerve function, and bone health.</li>
+        <li><strong>Calcium</strong> – Supports bones, teeth, normal muscle contraction, and nerve signaling.</li>
+        <li><strong>Phosphorus</strong> – Supports bone and tooth structure and normal energy metabolism.</li>
+        <li><strong>Vitamin D</strong> – Helps the body absorb calcium and supports bone, muscle, and immune function.</li>
+        <li><strong>Zinc</strong> – Supports normal connective tissue, bone maintenance, muscle recovery, and immune function.</li>
+        <li><strong>Boron</strong> – Supports mineral metabolism and normal bone wellness; evidence and needs vary.</li>
+        <li><strong>L-Arginine</strong> – Supports circulation and exercise performance.</li>
+        <li><strong>Beta-Alanine</strong> – Supports exercise capacity and muscular endurance.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Bone wellness</strong> – Supports the maintenance of normal bone density and strength alongside adequate calcium, vitamin D, and activity.</li>
+        <li><strong>Muscle strength and endurance</strong> – Complements resistance training, movement, and adequate protein intake.</li>
+        <li><strong>Joint and connective-tissue wellness</strong> – Supports normal mobility, flexibility, and connective-tissue function.</li>
+        <li><strong>Posture and mobility</strong> – Supports the muscles, nerves, and bones involved in balanced movement.</li>
+        <li><strong>Exercise recovery</strong> – Supports normal energy metabolism, muscle function, and recovery after activity.</li>
+        <li><strong>Long-term musculoskeletal health</strong> – Complements healthy habits that help maintain mobility and independence as you age.</li>
+      </ul>
+      <h4>Conditions Requiring Professional Care</h4>
+      <p>Muscle-Bone Care may complement a care plan, but it does not prevent, treat, or heal osteoporosis, osteopenia, sarcopenia, arthritis, tendinitis, bursitis, rickets, osteomalacia, fibromyalgia, fractures, or chronic pain.</p>
+      <p><strong>Important:</strong> Ask a healthcare professional before use if you have kidney, bone, or parathyroid disease, are pregnant or breastfeeding, or take thyroid, blood-pressure, blood-thinning, or other medicines. Calcium and magnesium can affect medicine absorption, so follow professional timing advice. Seek medical care for sudden severe pain, swelling, weakness, suspected fracture, or unexplained mobility changes.</p>`,
     rw: "Imyunyu ngugu n'intungamubiri bifasha amagufa n'imitsi gukora neza. Bishobora kujyana na siporo n'indyo yuzuye; ububabare bukomeye bushya mu magufa cyangwa imitsi busaba umuganga."
   },
   "Joint Flex": {
-    en: "Joint-support nutrients may help maintain flexibility and everyday comfort. Results differ, and swelling, redness, warmth, or sudden joint pain should be assessed by a clinician.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Joints connect bones, enable movement, absorb shock, and support flexibility.</strong> Healthy joint function helps you walk, bend, lift, stretch, and stay active with greater comfort.</p>
+      <p><strong>The danger?</strong> Aging, repetitive strain, previous injuries, inactivity, excess body weight, and inflammatory conditions may contribute to cartilage wear, stiffness, swelling, reduced cushioning, and limited mobility.</p>
+      <p><strong>Meet JointFlex™:</strong> A joint-health formula made with glucosamine, chondroitin, MSM, hyaluronic acid, Boswellia, turmeric, and collagen. It is designed to support cartilage, connective tissue, joint lubrication, healthy inflammatory balance, flexibility, and everyday mobility.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Glucosamine</strong> – A naturally occurring cartilage component that supports joint structure and comfort.</li>
+        <li><strong>Chondroitin</strong> – Supports cartilage resilience, cushioning, and normal joint function.</li>
+        <li><strong>MSM (Methylsulfonylmethane)</strong> – Provides sulfur and supports connective tissue and a healthy inflammatory response.</li>
+        <li><strong>Hyaluronic Acid</strong> – Supports the natural lubrication and cushioning of joints.</li>
+        <li><strong>Boswellia Extract</strong> – Traditionally used to support mobility, comfort, and healthy inflammatory balance.</li>
+        <li><strong>Turmeric Extract (Curcumin)</strong> – Provides antioxidant support and supports a healthy inflammatory response.</li>
+        <li><strong>Collagen</strong> – Supports connective tissue, cartilage structure, elasticity, and joint cushioning.</li>
+      </ul>
+      <h4>Why Use JointFlex™?</h4>
+      <ul>
+        <li><strong>Cartilage and connective-tissue support</strong> – Provides nutrients associated with normal joint structure.</li>
+        <li><strong>Joint lubrication</strong> – Supports smooth movement and everyday comfort.</li>
+        <li><strong>Mobility and flexibility</strong> – Complements regular movement, stretching, and strength exercise.</li>
+        <li><strong>Healthy inflammatory balance</strong> – Supports comfort during normal activity and occasional stiffness.</li>
+        <li><strong>Long-term joint wellness</strong> – Complements healthy weight management, balanced nutrition, and injury-prevention habits.</li>
+      </ul>
+      <p><strong>Important:</strong> JointFlex™ does not rebuild cartilage, cure arthritis, prevent fractures, or treat osteoarthritis, inflammatory joint disease, or chronic pain. Ask a healthcare professional before use if you are pregnant or breastfeeding, allergic to shellfish, have diabetes, asthma, liver or kidney disease, or take blood thinners or other medicines. Seek medical care for a hot, red, severely swollen joint, sudden injury, fever, or persistent or worsening pain.</p>`,
     rw: "Intungamubiri z'ingingo zishobora gufasha kugumana ubworohere n'uko ingingo zikora buri munsi. Iyo ingingo ibyimbye, itukura, ishyushye cyangwa ibabaza gitunguranye, saba umuganga."
   },
   "ImmuniKids Gummies": {
-    en: "Provides child-friendly nutrients intended to support normal immune function. Follow the age and serving directions, keep away from young children, and ask a pediatric professional before use.",
+    en: `<h4>Product Description</h4>
+      <p><strong>A child’s immune system supports everyday defense, energy, learning, growth, and development.</strong> Balanced meals, sleep, hand hygiene, physical activity, and routine healthcare are the foundation of children’s wellbeing.</p>
+      <p><strong>The danger?</strong> Picky eating, nutrient-poor diets, processed snacks, and limited food variety can make it harder for some children to obtain all the nutrients they need. Children may then experience low energy or difficulty meeting their nutritional needs.</p>
+      <p><strong>Meet ImmuniKids Gummies:</strong> Delicious, chewable multivitamins formulated to help fill nutritional gaps in growing children. They provide vitamins, minerals, and omega fatty acids to support normal immune function, growth, bones, teeth, brain development, focus, and everyday energy.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Vitamin A</strong> – Supports normal vision, eye development, skin, and immune function.</li>
+        <li><strong>Vitamin C</strong> – Supports immune function, collagen formation, skin, gums, and wound healing.</li>
+        <li><strong>Vitamin D</strong> – Helps the body absorb calcium and supports bones, teeth, muscles, and immune function.</li>
+        <li><strong>Vitamin E</strong> – Provides antioxidant support and helps maintain healthy cells and skin.</li>
+        <li><strong>B Vitamins (B6, B12, Folate, Pantothenic Acid)</strong> – Support energy metabolism, nervous-system function, red blood cell formation, and normal development.</li>
+        <li><strong>Biotin, Choline &amp; Inositol</strong> – Support energy metabolism, nervous-system function, and brain development.</li>
+        <li><strong>Iodine &amp; Zinc</strong> – Support thyroid function, growth, immune function, and normal cognitive development.</li>
+        <li><strong>Omega 3, 6, 9 &amp; DHA</strong> – Support brain, eye, nervous-system, and overall developmental wellness.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Immune wellness</strong> – Supports normal immune function alongside vaccines, sleep, hygiene, and balanced nutrition.</li>
+        <li><strong>Focus and learning</strong> – Provides nutrients that support normal brain and nervous-system function.</li>
+        <li><strong>Bones and teeth</strong> – Supports normal bone, tooth, and muscle development.</li>
+        <li><strong>Energy and growth</strong> – Supports energy metabolism and normal physical development.</li>
+        <li><strong>Skin and cell health</strong> – Supports normal skin maintenance and antioxidant protection.</li>
+        <li><strong>Daily nutrition</strong> – Helps complement a varied diet when food intake is limited or selective.</li>
+      </ul>
+      <h4>Why Parents Choose ImmuniKids Gummies</h4>
+      <p>They are chewable and easy to include in a child’s routine, with no pills to swallow. They should complement—not replace—varied meals, medical care, sleep, and healthy daily habits.</p>
+      <p><strong>Important:</strong> ImmuniKids Gummies do not prevent or treat infections, developmental delays, ADHD, or other medical conditions. Follow the product’s age and serving directions exactly, never exceed the recommended amount, and keep the container locked away from children because excessive intake of some vitamins can be dangerous. Ask a pediatric healthcare professional before use if your child has a medical condition, food allergy, takes medicines, or already uses another multivitamin. Seek urgent help if a child swallows an excessive amount.</p>`,
     rw: "Itanga intungamubiri z'abana zigenewe gufasha ubudahangarwa busanzwe. Kurikiza imyaka n'ingano byateganyijwe, uzibike kure y'abana bato, kandi ubaze umuganga w'abana mbere yo kuyikoresha."
   },
   "Feminine Brew": {
-    en: "Herbal ingredients are traditionally used for daily comfort and menstrual wellness. It is not a treatment for abnormal bleeding, severe cramps, pregnancy concerns, or hormonal disorders.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Women’s wellbeing is supported by energy, nourishment, rest, stress balance, and feeling comfortable in your body.</strong> Femmi-Brew Wellness Tea™ is a creamy strawberry tea combining black tea, dairy proteins, and traditional botanicals for a gentle daily wellness ritual.</p>
+      <p>The blend is designed to support everyday energy, focus, mood, feminine vitality, nourishment, and overall balance. It complements varied meals, regular movement, quality sleep, and appropriate healthcare.</p>
+      <h4>How to Use</h4>
+      <p>Empty one sachet into a cup, add 150 ml of hot water, stir, and sip. For iced tea, dissolve in a small amount of hot water, add cold water and ice, and enjoy chilled. Use once daily according to the package directions, preferably earlier in the day if you are sensitive to caffeine.</p>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Plant Fat Powder</strong> – Provides smooth texture and dietary fats that support satiety and absorption of fat-soluble compounds.</li>
+        <li><strong>Whey Powder</strong> – Provides complete protein and branched-chain amino acids that support muscle maintenance and recovery.</li>
+        <li><strong>BCAAs (Leucine, Isoleucine &amp; Valine)</strong> – Essential amino acids that support normal muscle protein synthesis and post-activity recovery.</li>
+        <li><strong>Milk Powder</strong> – Adds protein and naturally occurring calcium that supports normal bone maintenance.</li>
+        <li><strong>Instant Black Tea Powder</strong> – Provides caffeine for a gentle lift and tea polyphenols for antioxidant support.</li>
+        <li><strong>Ginseng Powder</strong> – Traditionally used to support energy, focus, circulation, and stress resilience.</li>
+        <li><strong>Maca Root Powder</strong> – Traditionally used to support stamina, mood, energy, and sexual wellness.</li>
+        <li><strong>Epimedium (Horny Goat Weed) Extract</strong> – Traditionally used to support circulation and feminine vitality; evidence and response vary.</li>
+        <li><strong>Strawberry Flavor</strong> – Adds a pleasant taste to support enjoyment and consistency.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Steady energy and focus</strong> – Supports daily alertness for work, study, and home life.</li>
+        <li><strong>Mood and stress resilience</strong> – Complements routines that support calmness and emotional balance.</li>
+        <li><strong>Feminine vitality</strong> – Supports general sexual wellness and confidence; it is not a treatment for sexual dysfunction.</li>
+        <li><strong>Bones and recovery</strong> – Provides protein and calcium support for normal bones and muscle recovery.</li>
+        <li><strong>Skin, hair, and beauty nutrition</strong> – Provides protein and antioxidant support as part of a balanced diet.</li>
+        <li><strong>Daily nourishment</strong> – Offers a convenient wellness drink for a balanced daily routine.</li>
+      </ul>
+      <h4>Quality You Can Trust</h4>
+      <p>Femmi-Brew is made under HACCP, ISO 22000, and Halal standards. HACCP supports preventive food-safety controls, ISO 22000 supports internationally recognized food-safety management, and Halal certification reflects compliant handling and production practices.</p>
+      <p><strong>Important:</strong> Femmi-Brew is not a treatment for hormonal disorders, infertility, abnormal bleeding, severe menstrual pain, menopause symptoms, or other medical conditions. It contains dairy and may contain caffeine; avoid it if allergic to milk or sensitive to caffeine. It is not intended for pregnant or breastfeeding women or people with hormone-sensitive conditions unless advised by a healthcare professional. Ask a clinician before use if you take medicines or have a heart, blood-pressure, liver, or kidney condition.</p>`,
     rw: "Ibiyigize by'ibyatsi bikunze gukoreshwa mu gufasha ihumure n'ubuzima bw'imihango. Ntabwo bivura kuva amaraso bidasanzwe, ibinya bikomeye, inda cyangwa indwara z'imisemburo."
   },
   "Total Vitality Blend": {
-    en: "A broad daily blend intended to complement energy, immune support, and general nutrition. Check the full ingredient list to avoid doubling nutrients with other supplements or medicines.",
+    en: `<h4>Product Description</h4>
+      <p><strong>Total Vitality Blend™</strong> combines vitamins, minerals, botanical extracts, probiotics, and CoQ10 in one daily supplement designed to complement nutrition, energy, immunity, gut health, skin, and healthy aging.</p>
+      <p>It is intended to support the mind and body throughout the day, alongside varied meals, regular movement, quality sleep, hydration, and appropriate healthcare.</p>
+      <h4>When You Take Total Vitality Blend™</h4>
+      <ul>
+        <li>Supports steady daily energy and normal cellular energy production.</li>
+        <li>Supports memory, focus, concentration, and normal nervous-system function.</li>
+        <li>Supports normal immune function and antioxidant protection.</li>
+        <li>Supports digestion, nutrient absorption, and everyday gut comfort.</li>
+        <li>Supports healthy aging and protection from everyday oxidative stress.</li>
+        <li>Supports heart and circulation wellness through CoQ10 and grape-seed extract.</li>
+        <li>Supports healthy-looking skin, hair, and nails with biotin and vitamins A, C, and E.</li>
+        <li>Supports bones and muscles with vitamin D3, vitamin K, magnesium, and zinc.</li>
+        <li>Supports resilience during everyday stress and fatigue through adaptogenic botanicals.</li>
+      </ul>
+      <h4>Key Ingredients &amp; Benefits</h4>
+      <ul>
+        <li><strong>Vitamin and Mineral Blend</strong> – Vitamins A, C, D3, E, K, B-complex, magnesium, zinc, selenium, copper, manganese, chromium, molybdenum, iodine, and choline support vision, skin, immunity, energy metabolism, nerves, blood formation, bones, muscles, thyroid function, and normal enzyme activity.</li>
+        <li><strong>Mental Boost Blend</strong> – Bacopa Monnieri and Ginkgo Biloba are traditionally used to support memory, focus, circulation, and stress resilience.</li>
+        <li><strong>Antioxidant and Recovery Blend</strong> – Rhodiola Rosea, grape-seed extract, green tea extract, CurQLife® curcumin, and black pepper provide antioxidant and energy-support benefits; black pepper may support absorption of some compounds.</li>
+        <li><strong>Gut Health Probiotic Blend</strong> – A blend of Lactobacillus, Bifidobacterium, and Streptococcus thermophilus strains supports gut flora balance, digestion, nutrient absorption, and normal immune function.</li>
+        <li><strong>CoQ10</strong> – Supports cellular energy production, cardiovascular wellness, antioxidant protection, and healthy aging.</li>
+      </ul>
+      <h4>Key Functions</h4>
+      <ul>
+        <li><strong>Daily vitality</strong> – Supports energy metabolism and normal physical performance.</li>
+        <li><strong>Brain and focus wellness</strong> – Supports memory, concentration, and nervous-system function.</li>
+        <li><strong>Immune and antioxidant support</strong> – Supports normal immune defenses and protection from oxidative stress.</li>
+        <li><strong>Digestive and probiotic support</strong> – Supports gut balance, regular digestion, and nutrient absorption.</li>
+        <li><strong>Heart and circulation wellness</strong> – Supports normal cardiovascular function and cellular energy.</li>
+        <li><strong>Beauty and healthy aging</strong> – Supports collagen, skin, hair, nail, bone, and connective-tissue wellness.</li>
+      </ul>
+      <p><strong>Important:</strong> Total Vitality Blend™ is not a treatment for fatigue, memory loss, diabetes, heart disease, thyroid disease, or other medical conditions. Check the full ingredient and serving information to avoid duplicating nutrients or botanicals with other supplements. Ask a healthcare professional before use if you are pregnant or breastfeeding, take prescription medicines, use blood thinners, have thyroid or kidney disease, or have surgery planned. Stop use for allergic symptoms or concerning reactions.</p>`,
     rw: "Ni uruvange rwa buri munsi rugenewe gufasha imbaraga, ubudahangarwa n'intungamubiri muri rusange. Reba ibiyigize byose wirinde gusubiramo intungamubiri n'indi miti cyangwa ibindi byiyongera."
   }
 };
 
 const translations = {
   en: {
-    nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', contact:'Contact', cta:'Order on WhatsApp' },
+    nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', quality:'Quality', contact:'Contact', cta:'Order on WhatsApp' },
     hero: {
       eyebrow:'Better health · Better life · Kigali-based service',
       title:'Choose better every day for <span>more energy and wellness.</span>',
@@ -733,6 +1212,19 @@ const translations = {
         ['Wellness guidance','Not sure what is right for you? Talk with our wellness advisor before choosing a product.']
       ]
     },
+    quality: {
+      kicker:'Our quality promise',
+      title:'Standards you can trust in every product.',
+      subtitle:'Our partners follow recognized food-safety and manufacturing standards so every product is made, handled, and packaged with care.',
+      cards:[
+        ['FDA Registered','Production facilities are registered with the U.S. Food & Drug Administration and follow approved health and safety guidelines.'],
+        ['ISO 22000 Certified','An international food-safety management standard covering the handling, processing, and packaging of ingredients.'],
+        ['GMP Certified','Good Manufacturing Practice helps ensure a clean, controlled environment with consistent quality and potency.'],
+        ['HACCP Certified','A systematic approach that helps prevent contamination and protect consumer safety at every production stage.'],
+        ['NSF Certified','Independent verification that products meet global standards for purity, strength, and accurate labeling.'],
+        ['Halal & Kosher Certified','Products meet ethical, clean, and faith-compliant manufacturing principles for customers worldwide.']
+      ]
+    },
     contact: {
       title:'Need advice before ordering?',
       text:'Message us on WhatsApp at +250 788 877 136 to speak with our wellness advisor or arrange free delivery anywhere in Rwanda.',
@@ -759,7 +1251,7 @@ const translations = {
     waPrefix:'Hello Elwell Hub, I would like to order '
   },
   rw: {
-    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki Elwell Hub', contact:'Twandikire', cta:'Tumiza kuri WhatsApp' },
+    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki Elwell Hub', quality:'Ubwiza', contact:'Twandikire', cta:'Tumiza kuri WhatsApp' },
     hero: {
       eyebrow:'Ubuzima bwiza · Imibereho myiza · Serivisi iboneka i Kigali',
       title:'Hitamo neza buri munsi ugire <span>imbaraga nyinshi n’ubuzima bwiza.</span>',
@@ -790,6 +1282,19 @@ const translations = {
         ['Serivisi yihariye kandi yihuse','Twandikire kuri WhatsApp kugira ngo tugufashe gutangira no kubona amakuru akwiye.'],
         ['Gushyikirizwa ku buntu mu Rwanda hose','Tanga aho uherereye hose mu Rwanda, tugushyikirize ibyo watumije ku buntu.'],
         ['Ubujyanama ku mirire','Ntuzi igikwiriye? Vugana n’umujyanama wacu w’imirire mbere yo guhitamo inyunganira.']
+      ]
+    },
+    quality: {
+      kicker:'Isezerano ry’ubwiza bwacu',
+      title:'Ibipimo ushobora kwiringira kuri buri gicuruzwa.',
+      subtitle:'Abafatanyabikorwa bacu bakurikiza ibipimo bizwi by’umutekano w’ibiribwa n’uburyo bwo gukora, kugira ngo buri gicuruzwa gikorewe kandi gipakirwe neza.',
+      cards:[
+        ['FDA Registered','Ibigo bikorerwamo byanditswe muri U.S. Food & Drug Administration kandi bikurikiza amabwiriza y’ubuzima n’umutekano.'],
+        ['ISO 22000 Certified','Ni igipimo mpuzamahanga cy’imicungire y’umutekano w’ibiribwa mu kubitunganya no kubipakira.'],
+        ['GMP Certified','Good Manufacturing Practice ifasha ko ibicuruzwa bikorwa ahantu hasukuye kandi hagenzurwa neza.'],
+        ['HACCP Certified','Ni uburyo bufasha gukumira kwandura kw’ibiribwa no kurinda umutekano w’ababikoresha.'],
+        ['NSF Certified','Igenzura ryigenga ryemeza ko ibicuruzwa byujuje ibipimo by’isuku, imbaraga n’amakuru nyayo.'],
+        ['Halal & Kosher Certified','Ibicuruzwa bikorerwa hakurikijwe amahame meza, asukuye kandi yubahiriza imyemerere itandukanye.']
       ]
     },
     contact: {
@@ -840,6 +1345,7 @@ function applyLanguage(lang){
   document.getElementById('nav-products').textContent = translations[lang].nav.products;
   document.getElementById('nav-how').textContent = translations[lang].nav.how;
   document.getElementById('nav-why').textContent = translations[lang].nav.why;
+  document.getElementById('nav-quality').textContent = translations[lang].nav.quality;
   document.getElementById('nav-contact').textContent = translations[lang].nav.contact;
   document.getElementById('nav-cta').textContent = translations[lang].nav.cta;
   document.getElementById('hero-eyebrow').innerHTML = `<span class="pulse"></span> ${translations[lang].hero.eyebrow}`;
@@ -880,6 +1386,14 @@ function applyLanguage(lang){
   document.getElementById('why-3-text').textContent = translations[lang].why.list[2][1];
   document.getElementById('why-4-title').textContent = translations[lang].why.list[3][0];
   document.getElementById('why-4-text').textContent = translations[lang].why.list[3][1];
+
+  document.getElementById('quality-kicker').textContent = translations[lang].quality.kicker;
+  document.getElementById('quality-title').textContent = translations[lang].quality.title;
+  document.getElementById('quality-subtitle').textContent = translations[lang].quality.subtitle;
+  translations[lang].quality.cards.forEach((card, index) => {
+    document.getElementById(`quality-${index + 1}-title`).textContent = card[0];
+    document.getElementById(`quality-${index + 1}-text`).textContent = card[1];
+  });
 
   document.getElementById('contact-title').textContent = translations[lang].contact.title;
   document.getElementById('contact-text').textContent = translations[lang].contact.text;
@@ -929,7 +1443,7 @@ function renderGrid(filter, lang = state.lang){
         <h3>${p.name}</h3>
         <p class="desc">${p.desc}</p>
         <button class="details-btn" type="button" aria-expanded="false">${translations[lang].seeMore}</button>
-        <p class="more-info">${productDetails[p.name][lang]}</p>
+        <div class="more-info">${productDetails[p.name][lang]}</div>
         <div class="row">
           <a class="buy-btn" href="${waLink(p.name, lang)}" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Z"/></svg>
