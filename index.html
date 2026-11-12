@@ -385,6 +385,22 @@
     animation:pop .3s ease;
   }
   .float-wa svg{width:30px;height:30px;fill:currentColor;}
+  .float-consult{
+    position:fixed;right:24px;bottom:96px;z-index:200;
+    display:flex;align-items:center;gap:8px;
+    background:var(--orange);color:var(--white);
+    padding:12px 18px;border-radius:100px;
+    box-shadow:0 10px 24px rgba(0,0,0,.2);
+    font-size:13px;font-weight:700;text-decoration:none;
+    transition:background .15s,transform .15s;
+    animation:consult-float 2.8s ease-in-out infinite;
+  }
+  .float-consult:hover{background:var(--orange-dark);transform:translateY(-2px);animation-play-state:paused;}
+  .float-consult svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  @keyframes consult-float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+  }
   @keyframes pop{from{transform:scale(0);}to{transform:scale(1);}}
 
   @media(max-width:900px){
@@ -417,6 +433,8 @@
     .quality-mark{width:88px;height:88px;flex-basis:88px;}
     .quality-card h3{font-size:15px;}
     .quality-card p{font-size:13px;}
+    .float-consult{right:16px;bottom:88px;padding:10px 14px;font-size:12px;}
+    .float-wa{right:16px;bottom:16px;width:56px;height:56px;}
     .foot-grid{grid-template-columns:1fr;}
     .trust .wrap{justify-content:center;}
     .trust-item{font-size:13px;}
@@ -444,8 +462,8 @@
       <button type="button" class="active" data-lang="en">EN</button>
       <button type="button" data-lang="rw">RW</button>
     </div>
-    <a id="nav-cta" class="nav-cta" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20learn%20more%20about%20OQATA%20products." target="_blank" rel="noopener">
-      Order on WhatsApp
+    <a id="nav-cta" class="nav-cta" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20book%20a%20nutrition%20consultation." target="_blank" rel="noopener">
+      Book a consultation
     </a>
   </div>
 </header>
@@ -462,7 +480,7 @@
           Browse products
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a id="hero-advisor" class="btn-ghost" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20speak%20with%20a%20wellness%20advisor%20before%20choosing%20a%20product." target="_blank" rel="noopener">Talk to an advisor</a>
+        <a id="hero-advisor" class="btn-ghost" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20book%20a%20nutrition%20consultation." target="_blank" rel="noopener">Book a consultation</a>
       </div>
       <div class="hero-stats">
         <div><p>16+</p><p id="hero-stat-1">products available</p></div>
@@ -565,8 +583,8 @@
   <div class="cta-band">
     <h2 id="contact-title">Need advice before ordering?</h2>
     <p id="contact-text">Message us on WhatsApp at +250 788 877 136 to speak with our wellness advisor or arrange free delivery anywhere in Rwanda.</p>
-    <a id="contact-btn" class="btn-primary" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
-      Message +250 788 877 136
+    <a id="contact-btn" class="btn-primary" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20book%20a%20nutrition%20consultation." target="_blank" rel="noopener">
+      Book a consultation
     </a>
   </div>
 </section>
@@ -656,6 +674,11 @@
     <p id="footer-disclaimer" class="disclaimer">Elwell Hub is an independent product website and is not the official website of OQATA Wellness Solutions. Product information has not been evaluated and is not intended to diagnose, treat, cure, or prevent any disease. Consult a healthcare professional before starting a new supplement.</p>
   </div>
 </footer>
+
+<a id="float-consult" class="float-consult" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20book%20a%20nutrition%20consultation." target="_blank" rel="noopener" aria-label="Book a nutrition consultation on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h5"></path></svg>
+  <span id="float-consult-label">Book a consultation</span>
+</a>
 
 <a class="float-wa" href="https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20order%20a%20product." target="_blank" rel="noopener" aria-label="Contact us on WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4C7.29 4 3.4 7.89 3.4 12.65c0 1.53.4 3.02 1.17 4.34L3.33 21l4.13-1.22a9.1 9.1 0 0 0 4.6 1.24h.01c4.76 0 8.65-3.89 8.65-8.65a8.6 8.6 0 0 0-3.12-6.05Zm-5.55 13.3h-.01a7.5 7.5 0 0 1-3.83-1.05l-.27-.16-2.75.81.82-2.68-.18-.28a7.42 7.42 0 0 1-1.14-3.97c0-4.1 3.35-7.44 7.47-7.44 2 0 3.87.78 5.28 2.19a7.38 7.38 0 0 1 2.18 5.26c0 4.1-3.35 7.44-7.47 7.44Zm4.09-5.58c-.22-.11-1.32-.65-1.53-.73-.2-.08-.35-.11-.5.11-.15.22-.58.73-.71.88-.13.15-.26.16-.48.05-.22-.11-.94-.35-1.79-1.11a6.69 6.69 0 0 1-1.24-1.55c-.13-.22 0-.33.1-.44.1-.1.22-.26.33-.4.11-.13.15-.22.22-.37.07-.15.04-.28-.02-.4-.07-.11-.5-1.2-.68-1.65-.18-.43-.36-.37-.5-.38h-.43c-.15 0-.4.06-.6.28-.2.22-.8.78-.8 1.9s.82 2.2.93 2.35c.11.15 1.62 2.47 3.92 3.47.55.24.98.38 1.31.48.55.17 1.06.15 1.45.09.44-.07 1.32-.54 1.51-1.06.19-.51.19-.95.13-1.05-.06-.1-.2-.15-.42-.26Z"/></svg>
@@ -1179,13 +1202,13 @@ const productDetails = {
 
 const translations = {
   en: {
-    nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', quality:'Quality', contact:'Contact', cta:'Order on WhatsApp' },
+    nav: { home:'Home', products:'Products', how:'How to order', why:'Why us', quality:'Quality', contact:'Contact', cta:'Book a consultation' },
     hero: {
       eyebrow:'Better health · Better life · Kigali-based service',
       title:'Choose better every day for <span>more energy and wellness.</span>',
       lead:'Elwell Hub is a nutritional and dietetic cabinet focused on helping people in Rwanda prevent and manage non-communicable diseases through practical nutrition guidance. Our supplements are selected to complement your care plan.',
       browse:'Browse products',
-      advisor:'Talk to an advisor',
+      advisor:'Book a consultation',
       stats:['products available','authentic and sealed','order confirmation'],
       tag:'Most popular'
     },
@@ -1228,7 +1251,7 @@ const translations = {
     contact: {
       title:'Need advice before ordering?',
       text:'Message us on WhatsApp at +250 788 877 136 to speak with our wellness advisor or arrange free delivery anywhere in Rwanda.',
-      btn:'Message +250 788 877 136'
+      btn:'Book a consultation'
     },
     footer: {
       copy:'A nutritional and dietetic cabinet supporting healthier living in Rwanda, with supplements that complement personalized care.',
@@ -1251,13 +1274,13 @@ const translations = {
     waPrefix:'Hello Elwell Hub, I would like to order '
   },
   rw: {
-    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki Elwell Hub', quality:'Ubwiza', contact:'Twandikire', cta:'Tumiza kuri WhatsApp' },
+    nav: { home:'Ahabanza', products:'Ibicuruzwa', how:'Uburyo bwo gutumiza', why:'Kuki Elwell Hub', quality:'Ubwiza', contact:'Twandikire', cta:'Bika ubujyanama' },
     hero: {
       eyebrow:'Ubuzima bwiza · Imibereho myiza · Serivisi iboneka i Kigali',
       title:'Hitamo neza buri munsi ugire <span>imbaraga nyinshi n’ubuzima bwiza.</span>',
       lead:'Elwell Hub ni ikigo gitanga serivisi z’imirire n’imitegurire y’indyo, cyibanda ku gufasha abantu bo mu Rwanda kwirinda no gucunga indwara zitandura (NCDs) binyuze mu nama zifatika ku mirire. Ibyongera by’imirire dutanga bigenewe kunganira gahunda yawe yo kwitabwaho.',
       browse:'Reba ibicuruzwa',
-      advisor:'Baza umujyanama',
+      advisor:'Bika ubujyanama',
       stats:['ibicuruzwa biriho','byemewe kandi byuzuye','hamwe no kwemeza',],
       tag:'Cyamamaye'
     },
@@ -1300,7 +1323,7 @@ const translations = {
     contact: {
       title:'Ukeneye ubujyanama ku mirire mbere yo gutumiza?',
       text:'Twandikire kuri WhatsApp +250 788 877 136 kugira ngo uvugane n’umujyanama wacu w’imirire cyangwa utegure uko wakwakira ibyo watumije ku buntu mu Rwanda hose.',
-      btn:'Twandikire +250 788 877 136'
+      btn:'Bika ubujyanama'
     },
     footer: {
       copy:'Ikigo gitanga serivisi z’imirire n’imitegurire y’indyo mu Rwanda, hamwe n’ibyongera by’imirire bigenewe kunganira ubujyanama bwihariye.',
@@ -1348,6 +1371,10 @@ function applyLanguage(lang){
   document.getElementById('nav-quality').textContent = translations[lang].nav.quality;
   document.getElementById('nav-contact').textContent = translations[lang].nav.contact;
   document.getElementById('nav-cta').textContent = translations[lang].nav.cta;
+  document.getElementById('float-consult-label').textContent = translations[lang].nav.cta;
+  document.getElementById('float-consult').href = lang === 'en'
+    ? 'https://wa.me/250788877136?text=Hello%20Elwell%20Hub%2C%20I%27d%20like%20to%20book%20a%20nutrition%20consultation.'
+    : 'https://wa.me/250788877136?text=Mwaramutse%20Elwell%20Hub%2C%20ndashaka%20kubika%20ubujyanama%20ku%20mirire.';
   document.getElementById('hero-eyebrow').innerHTML = `<span class="pulse"></span> ${translations[lang].hero.eyebrow}`;
   document.getElementById('hero-title').innerHTML = translations[lang].hero.title;
   document.getElementById('hero-lead').textContent = translations[lang].hero.lead;
